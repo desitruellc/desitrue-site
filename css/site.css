@@ -192,7 +192,7 @@ a:hover { color: var(--rose-dark); }
   content: counter(step);
   display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: var(--s4);
   border-radius: 50%; border: 2px solid var(--rose-gold);
-  font: 600 1.5rem/1 var(--font-display); color: var(--rose);
+  font: 700 1.1rem/1 var(--font-body); color: var(--rose);
 }
 .steps h3 { font-size: 1.4rem; margin-bottom: var(--s2); }
 .steps p { color: var(--ink-soft); margin: 0; }
@@ -261,3 +261,7 @@ a:hover { color: var(--rose-dark); }
 .page-hero { padding: var(--s8) 0 var(--s6); }
 .page-hero .lead { margin-bottom: 0; }
 .center { text-align: center; }
+
+/* Until a photo is added: drop empty card photos, and keep empty arches only on wide screens */
+.photo--card.is-empty { display: none; }
+@media (max-width: 879px) { .photo--arch.is-empty { display: none; } }
