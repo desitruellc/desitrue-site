@@ -125,6 +125,14 @@ a:hover { color: var(--rose-dark); }
   display: grid; place-items: center;
   color: var(--white); font-size: 1.05rem; font-weight: 700;
 }
+.brand-text { display: flex; flex-direction: column; }
+.brand-name { line-height: 1; }
+.brand-sub {
+  margin-top: 3px;
+  font: 700 0.62rem/1 var(--font-body); letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--rose);
+}
+.site-footer .brand-sub { color: #f3d9d2; }
 .site-nav { display: flex; align-items: center; gap: var(--s1); }
 .site-nav a {
   padding: var(--s2) var(--s2); font-weight: 500; font-size: 0.95rem;
