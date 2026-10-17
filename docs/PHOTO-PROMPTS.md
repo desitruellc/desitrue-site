@@ -1,6 +1,6 @@
-# DesiTrue photo prompts
+# DésiTrue photo prompts
 
-Prompts for the website's remaining photos, written for Microsoft Copilot (or any image tool). They match the look of the photo already on the site: Desirée's bright high-rise office with rose-gold accents.
+Prompts for the website's remaining photos, written for Microsoft Copilot (or any image tool). They match the look of the photo already on the site: Désirée's bright high-rise office with rose-gold accents.
 
 ## How to hand them back
 
@@ -12,7 +12,7 @@ Prompts for the website's remaining photos, written for Microsoft Copilot (or an
 
 Copilot images garble words and invent fake documents, so every prompt below already says:
 
-- **No readable text, words, logos or brand names.** The real DesiTrue logo is already in the main photo.
+- **No readable text, words, logos or brand names.** The real DésiTrue logo is already in the main photo.
 - **No framed certificates or diplomas.** Credentials shown on the site should be real ones.
 - **Same palette:** cream walls, dark walnut desk, rose-gold and brass accents, soft daylight from tall windows, a city view.
 
@@ -46,7 +46,7 @@ Professional photograph of a modern creative workspace on a dark walnut desk in 
 
 - **File:** `about-portrait` · **Shape:** portrait 4:5 · **Used on:** About page and the home page's "Meet the founder" section, replacing the second copy of the office photo
 
-**Attach the existing office photo as a reference** so Copilot keeps her likeness. Then ask Desirée whether the result looks like her before it goes on the site.
+**Attach the existing office photo as a reference** so Copilot keeps her likeness. Then ask Désirée whether the result looks like her before it goes on the site.
 
 ```text
 Using the attached photo as a reference for the same woman, create a professional, warm headshot of her: a Black woman with short curly copper-auburn hair, wearing a red blazer over a cream silk blouse, smiling naturally at the camera. Chest-up framing, standing by floor-to-ceiling windows in a bright modern office, softly blurred city view behind her, rose-gold and cream tones. Natural, true-to-life skin tones and features, approachable and confident. No text, no logos, no name plate. Portrait 4:5.
@@ -66,5 +66,5 @@ Wide, elegant brand banner photograph: a bright modern high-rise office with a c
 
 These have no spot on the site yet. If any of them turns out well, ask Claude to add a section for it.
 
-- **Contact page:** Desirée on a video call at her desk, smiling, laptop facing her. Attach the reference photo. Landscape 3:2.
-- **About page, "Who we help":** a small business owner and Desirée reviewing a laptop together across a desk, both smiling. Faces turned away from the camera, or attach the reference photo. Landscape 3:2.
+- **Contact page:** Désirée on a video call at her desk, smiling, laptop facing her. Attach the reference photo. Landscape 3:2.
+- **About page, "Who we help":** a small business owner and Désirée reviewing a laptop together across a desk, both smiling. Faces turned away from the camera, or attach the reference photo. Landscape 3:2.

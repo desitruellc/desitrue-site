@@ -1,6 +1,6 @@
-# DesiTrue Services LLC website
+# DésiTrue Services LLC website
 
-Static marketing site for Desirée Truesdale's bookkeeping, admin-support and creative-marketing business, served by GitHub Pages from `main` / root. The owner is not a developer: explain changes in plain words, show a preview (Browser pane, phone and desktop width) and wait for her OK before committing or pushing.
+Static marketing site for Désirée Truesdale's bookkeeping, admin-support and creative-marketing business, served by GitHub Pages from `main` / root. The owner is not a developer: explain changes in plain words, show a preview (Browser pane, phone and desktop width) and wait for her OK before committing or pushing.
 
 Gotchas the files won't tell you:
 - No build step, on purpose. Plain HTML + `css/site.css`; don't add a framework, bundler or npm.
