@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DesiTrue Image Prompts</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+  :root { --cream:#fffaf7; --blush:#f6e6e2; --rose-gold:#b76e79; --rose:#8a4a56; --ink:#2e2328; --ink-soft:#5b4b51; --line:#eadcd8; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--cream); color:var(--ink); font:400 16px/1.6 "DM Sans", system-ui, sans-serif; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 48px 16px 96px; }
+  h1, h2 { font-family:"Cormorant Garamond", Georgia, serif; font-weight:600; line-height:1.15; margin:0 0 12px; }
+  h1 { font-size: clamp(2.2rem, 5vw, 3rem); }
+  h2 { font-size: 2rem; margin-top: 56px; }
+  .lead { font-size:1.1rem; color:var(--ink-soft); max-width: 40em; }
+  .tip { background:var(--blush); border-left:3px solid var(--rose-gold); padding:16px 20px; border-radius:0 12px 12px 0; margin:24px 0; }
+  .tip strong { color:var(--rose); }
+  .slot { background:#fff; border-radius:14px; box-shadow:0 1px 2px rgb(46 35 40 / .06), 0 8px 24px rgb(46 35 40 / .07); padding:24px; margin:20px 0; }
+  .slot h3 { margin:0 0 4px; font-size:1.15rem; }
+  .meta { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 16px; padding:0; list-style:none; }
+  .meta li { font-size:.85rem; background:var(--blush); color:var(--rose); border-radius:999px; padding:2px 12px; font-weight:500; }
+  .meta code { font-weight:700; }
+  .prompt { position:relative; background:var(--cream); border:1px solid var(--line); border-radius:10px; padding:16px 16px 56px; white-space:pre-wrap; font-size:.95rem; }
+  .copy { position:absolute; right:12px; bottom:12px; border:0; border-radius:999px; background:var(--rose); color:#fff; font:700 .85rem/1 "DM Sans", sans-serif; padding:10px 16px; cursor:pointer; min-height:36px; }
+  .copy:hover { background:#6e3844; }
+  .copy:focus-visible { outline:3px solid var(--rose); outline-offset:3px; }
+  .note { color:var(--ink-soft); font-size:.95rem; margin:12px 0 0; }
+  ol li, ul li { margin-bottom:6px; }
+  a { color:var(--rose); }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <h1>DesiTrue photo &amp; logo prompts</h1>
+  <p class="lead">Ready-to-paste prompts for an AI image tool such as ChatGPT, Midjourney or Adobe Firefly. Every prompt says exactly which file it becomes, so a finished image drops straight into the site.</p>
+
+  <div class="tip">
+    <strong>How to add a finished image.</strong>
+    <ol>
+      <li>Download the image and crop it to the shape listed (for example 4:5).</li>
+      <li>Resize it to the width listed, then shrink the file at <a href="https://squoosh.app">squoosh.app</a> (choose JPG, quality around 75). Aim for under 300 KB.</li>
+      <li>Name it exactly as shown (for example <code>hero.jpg</code>) and put it in the <code>assets/img</code> folder. The site picks it up automatically, with no code to change.</li>
+    </ol>
+  </div>
+
+  <h2>Website photos</h2>
+
+  <section class="slot">
+    <h3>Home page, main photo</h3>
+    <ul class="meta"><li><code>hero.jpg</code></li><li>4:5 portrait</li><li>1200 × 1500 px</li></ul>
+    <div class="prompt">Editorial lifestyle photograph of a confident, warm professional woman in her thirties working at a tidy light-wood desk beside a large sunlit window. Laptop open, a leather notebook, a ceramic coffee cup, a small vase of blush roses. Soft natural morning light, shallow depth of field. Colour palette of cream, blush pink and rose gold, with subtle rose-gold accents such as a pen and a watch. Calm, organised, welcoming mood. Shot on a 50mm lens, true-to-life skin tones, no text, no logos. Vertical 4:5 composition with the subject slightly off-centre.<button class="copy" type="button">Copy</button></div>
+  </section>
+
+  <section class="slot">
+    <h3>Service card: Money &amp; bookkeeping</h3>
+    <ul class="meta"><li><code>svc-financial.jpg</code></li><li>3:2 landscape</li><li>1200 × 800 px</li></ul>
+    <div class="prompt">Overhead flat-lay photograph of a neat bookkeeping workspace: a laptop showing a simple bar chart, a calculator, printed spreadsheets, a rose-gold pen and a small succulent on a cream linen desk. Soft diffused daylight, gentle shadows. Palette of cream, blush and rose gold. Clean, calm and trustworthy. No readable text, no brand names. Horizontal 3:2.<button class="copy" type="button">Copy</button></div>
+  </section>
+
+  <section class="slot">
+    <h3>Service card: Administrative support</h3>
+    <ul class="meta"><li><code>svc-admin.jpg</code></li><li>3:2 landscape</li><li>1200 × 800 px</li></ul>
+    <div class="prompt">Close-up lifestyle photograph of hands organising a paper planner and a phone calendar on a light desk, with a passport and boarding pass tucked beside them to suggest travel arrangements. Warm window light, shallow depth of field. Palette of cream, blush pink and rose gold. Orderly, unhurried mood. No readable text, no logos. Horizontal 3:2.<button class="copy" type="button">Copy</button></div>
+  </section>
+
+  <section class="slot">
+    <h3>Service card: Creative &amp; marketing</h3>
+    <ul class="meta"><li><code>svc-creative.jpg</code></li><li>3:2 landscape</li><li>1200 × 800 px</li></ul>
+    <div class="prompt">Bright lifestyle photograph of a creative workspace: a laptop with a blog draft layout on screen, a phone showing a social media grid of soft pastel images, colour swatches in blush and rose gold, and a notebook of sketched ideas. Soft natural light, airy and modern. Palette of cream, blush and rose gold. No readable text, no real brand logos. Horizontal 3:2.<button class="copy" type="button">Copy</button></div>
+  </section>
+
+  <section class="slot">
+    <h3>About page portrait</h3>
+    <ul class="meta"><li><code>about-portrait.jpg</code></li><li>4:5 portrait</li><li>1000 × 1250 px</li></ul>
+    <p class="note" style="margin-top:0"><strong>Use a real photo of Desirée here if at all possible.</strong> This spot says "Hi, I'm Desirée", so a made-up face would mislead visitors. A phone photo by a window, from the chest up, against a plain light wall, works well. The prompt below is only for a temporary image that doesn't show a person.</p>
+    <div class="prompt" style="margin-top:16px">Still-life photograph of an elegant home office corner: a cream armchair, a small side table with a rose-gold lamp, an open notebook and a cup of tea, blush roses in a vase. Soft afternoon light, no people. Palette of cream, blush and rose gold. Vertical 4:5.<button class="copy" type="button">Copy</button></div>
+  </section>
+
+  <section class="slot">
+    <h3>Link preview image (shown when the site is shared in a text or on social media)</h3>
+    <ul class="meta"><li><code>og-image.jpg</code></li><li>1.91:1</li><li>1200 × 630 px</li></ul>
+    <div class="prompt">Minimal brand banner on a soft blush-to-cream gradient background with a subtle rose-gold foil texture along one edge. Plenty of empty space in the centre for a logo to be added afterwards. Elegant, warm, professional. No text. Horizontal 1200×630.<button class="copy" type="button">Copy</button></div>
+    <p class="note">Once the logo exists, place it in the middle of this image (Canva works well), then save it as <code>og-image.jpg</code>.</p>
+  </section>
+
+  <h2>Logo</h2>
+  <p class="lead">The site uses a simple "D" badge and the name in an elegant serif typeface until a real logo is ready. Try these three directions and pick the one that feels most like her.</p>
+  <div class="tip"><strong>Before using an AI logo everywhere:</strong> AI tools make a picture of a logo, not a proper logo file. Once she picks a favourite, have it redrawn as a vector file (SVG) by a designer (Fiverr or 99designs, often under $50) so it stays sharp on business cards and signs. AI tools also misspell words, so check that "DesiTrue" is spelled exactly right.</div>
+
+  <section class="slot">
+    <h3>Direction 1: Elegant wordmark</h3>
+    <div class="prompt">Logo design for "DesiTrue", a boutique bookkeeping and business support company. An elegant high-contrast serif wordmark with the exact spelling "DesiTrue", a capital D and a capital T. Rose-gold metallic foil on a plain cream background. Refined, warm, trustworthy, feminine without being frilly. Flat vector style, centred, generous spacing around it, no other text, no mockup.<button class="copy" type="button">Copy</button></div>
+  </section>
+
+  <section class="slot">
+    <h3>Direction 2: DT monogram</h3>
+    <div class="prompt">Monogram logo combining the letters "D" and "T" into one elegant interlocking mark inside a thin circle, for a boutique financial and business support company called DesiTrue. Rose-gold gradient line art on a cream background. Minimal, balanced and timeless, and it must work at small sizes such as a website favicon. Flat vector style, no extra text, no mockup.<button class="copy" type="button">Copy</button></div>
+  </section>
+
+  <section class="slot">
+    <h3>Direction 3: Wordmark with a small symbol</h3>
+    <div class="prompt">Logo for "DesiTrue" (exact spelling): a modern serif wordmark next to a small simple symbol that suggests balance and care, such as a minimal checkmark woven into a leaf, or a balanced scale drawn with one continuous line. Deep rose (#8A4A56) and rose gold (#B76E79) on cream (#FFFAF7). Professional, warm and approachable. Flat vector style, horizontal layout, no tagline, no mockup.<button class="copy" type="button">Copy</button></div>
+  </section>
+
+  <h2>Mockup for inspiration</h2>
+  <p class="lead">Paste this into ChatGPT to see an alternative look for the home page. It is for ideas only, not a plan to rebuild the site.</p>
+  <section class="slot">
+    <div class="prompt">Design a high-fidelity desktop website mockup for the home page of "DesiTrue", a one-woman boutique business offering bookkeeping, tax preparation, budgeting and debt payoff, administrative support (diary management, travel arrangements) and creative marketing (blogs, social media, SEO). Palette: cream background, blush pink sections, deep rose buttons and rose-gold accents. Typography: an elegant serif for headings and a clean sans-serif for body text. Sections: a hero with a headline, a short line of supporting text, a "Book a free consultation" button and an arched photo frame; three service cards; a three-step "How it works" section; a "Meet the founder" section with a portrait; and a closing call-to-action band. Mood: professional, warm, approachable, calm. Show it as a full-page screenshot.<button class="copy" type="button">Copy</button></div>
+  </section>
+</main>
+<script>
+  document.querySelectorAll(".copy").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var text = btn.parentNode.firstChild.textContent.trim();
+      navigator.clipboard.writeText(text).then(function () {
+        btn.textContent = "Copied";
+        setTimeout(function () { btn.textContent = "Copy"; }, 1500);
+      }, function () { btn.textContent = "Select and copy"; });
+    });
+  });
+</script>
+</body>
+</html>
