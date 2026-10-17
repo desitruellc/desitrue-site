@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DesiTrue Website Guide</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=DM+Sans:wght@400;500;700&family=DM+Mono&display=swap">
+<style>
+  :root {
+    --cream:#fffaf7; --blush:#f6e6e2; --blush-deep:#ebcdc6; --rose-gold:#b76e79; --rose:#8a4a56; --rose-dark:#6e3844;
+    --ink:#2e2328; --ink-soft:#5b4b51; --line:#eadcd8; --white:#fff; --warn:#8a5a00; --warn-bg:#fff4dc;
+    --mono:"DM Mono", ui-monospace, Consolas, monospace;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; scroll-padding-top:24px; }
+  body { margin:0; background:var(--cream); color:var(--ink); font:400 16.5px/1.65 "DM Sans", system-ui, "Segoe UI", sans-serif; }
+  h1, h2, h3 { font-family:"Cormorant Garamond", Georgia, serif; font-weight:600; line-height:1.15; margin:0 0 12px; text-wrap:balance; }
+  h1 { font-size:clamp(2.4rem, 6vw, 3.4rem); }
+  h2 { font-size:clamp(1.9rem, 4vw, 2.4rem); padding-top:8px; }
+  h3 { font-size:1.45rem; margin-top:32px; }
+  p { margin:0 0 14px; }
+  a { color:var(--rose); text-underline-offset:3px; }
+  a:hover { color:var(--rose-dark); }
+  :focus-visible { outline:3px solid var(--rose); outline-offset:3px; border-radius:4px; }
+  code { font-family:var(--mono); font-size:.88em; background:var(--blush); padding:1px 6px; border-radius:6px; overflow-wrap:anywhere; }
+  pre { font-family:var(--mono); font-size:.86rem; line-height:1.55; background:var(--ink); color:#f6e6e2; padding:16px 18px; border-radius:12px; overflow-x:auto; margin:0 0 16px; }
+  pre code { background:none; padding:0; font-size:inherit; color:inherit; }
+  kbd { font-family:var(--mono); font-size:.85em; border:1px solid var(--blush-deep); border-bottom-width:2px; border-radius:6px; padding:0 6px; background:var(--white); }
+
+  .layout { max-width:1180px; margin:0 auto; padding:0 16px; display:grid; gap:32px; }
+  @media (min-width:1000px) { .layout { grid-template-columns:240px 1fr; gap:56px; padding:0 24px; } }
+
+  header.cover { max-width:1180px; margin:0 auto; padding:56px 16px 24px; }
+  @media (min-width:1000px) { header.cover { padding:72px 24px 32px; } }
+  .eyebrow { font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--rose); margin-bottom:12px; display:flex; align-items:center; gap:12px; }
+  .eyebrow::before { content:""; width:28px; height:2px; background:linear-gradient(135deg,#e8b4a8,#b76e79,#d9a08f); }
+  .lead { font-size:1.15rem; color:var(--ink-soft); max-width:40em; }
+
+  nav.toc { font-size:.95rem; }
+  nav.toc ol { list-style:none; margin:0; padding:0; counter-reset:toc; }
+  nav.toc li { counter-increment:toc; }
+  nav.toc a { display:flex; gap:10px; padding:6px 10px; border-radius:8px; color:var(--ink-soft); text-decoration:none; }
+  nav.toc a::before { content:counter(toc); color:var(--rose-gold); font-weight:700; min-width:1.2em; }
+  nav.toc a:hover { background:var(--blush); color:var(--ink); }
+  .toc-title { font-weight:700; margin:0 0 8px 10px; }
+  @media (min-width:1000px) { nav.toc { position:sticky; top:24px; align-self:start; max-height:calc(100vh - 48px); overflow:auto; } }
+  @media (max-width:999px) { nav.toc { background:var(--white); border-radius:14px; padding:16px 8px; box-shadow:0 1px 2px rgb(46 35 40/.06); } }
+
+  main { min-width:0; padding-bottom:96px; }
+  section.chapter { padding:40px 0; border-top:1px solid var(--line); }
+  section.chapter:first-child { border-top:0; padding-top:0; }
+  .num { font-family:"DM Sans", sans-serif; font-size:.85rem; font-weight:700; color:var(--rose-gold); letter-spacing:.1em; display:block; margin-bottom:6px; }
+  .prose { max-width:44em; }
+
+  .callout { border-radius:12px; padding:16px 20px; margin:20px 0; max-width:44em; }
+  .callout p:last-child, .callout ul:last-child, .callout ol:last-child { margin-bottom:0; }
+  .callout--tip { background:var(--blush); border-left:3px solid var(--rose-gold); }
+  .callout--warn { background:var(--warn-bg); border-left:3px solid #c98a00; }
+  .callout--warn strong:first-child { color:var(--warn); }
+  .callout--tip strong:first-child { color:var(--rose); }
+
+  figure { margin:24px 0; }
+  figure svg { width:100%; height:auto; display:block; color:var(--ink); }
+  .diagram { background:var(--white); border-radius:14px; padding:20px; box-shadow:0 1px 2px rgb(46 35 40/.06), 0 8px 24px rgb(46 35 40/.06); }
+  figcaption { font-size:.92rem; color:var(--ink-soft); margin-top:12px; max-width:44em; }
+
+  .steps { counter-reset:s; list-style:none; padding:0; margin:0 0 16px; max-width:44em; }
+  .steps > li { counter-increment:s; position:relative; padding:0 0 18px 48px; }
+  .steps > li::before { content:counter(s); position:absolute; left:0; top:0; width:32px; height:32px; border-radius:50%; border:2px solid var(--rose-gold); color:var(--rose); font-weight:700; display:grid; place-items:center; font-size:.95rem; }
+  .steps > li > strong:first-child { display:block; }
+
+  .cards { display:grid; gap:16px; margin:16px 0 24px; }
+  @media (min-width:760px) { .cards { grid-template-columns:repeat(2, 1fr); } }
+  .card { background:var(--white); border-radius:14px; padding:20px; box-shadow:0 1px 2px rgb(46 35 40/.06), 0 8px 24px rgb(46 35 40/.06); }
+  .card h4 { margin:0 0 8px; font-size:1rem; }
+  .card p { color:var(--ink-soft); font-size:.95rem; }
+
+  .tree { background:var(--white); border-radius:14px; padding:8px 0; box-shadow:0 1px 2px rgb(46 35 40/.06); max-width:52em; }
+  .tree div { display:grid; grid-template-columns:minmax(150px, 230px) 1fr; gap:12px; padding:10px 20px; border-bottom:1px solid var(--line); }
+  .tree div:last-child { border-bottom:0; }
+  .tree code { background:none; padding:0; font-weight:500; color:var(--rose-dark); }
+  .tree .indent code { padding-left:18px; }
+  .tree span { color:var(--ink-soft); font-size:.95rem; }
+  @media (max-width:560px) { .tree div { grid-template-columns:1fr; gap:2px; } }
+
+  .ba { display:grid; gap:12px; margin:12px 0 20px; max-width:52em; }
+  @media (min-width:760px) { .ba { grid-template-columns:1fr 1fr; } }
+  .ba pre { margin:0; }
+  .ba .tag { font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:6px; }
+
+  .ask { background:var(--white); border:1px solid var(--blush-deep); border-radius:12px; padding:12px 16px; margin:8px 0; font-style:italic; max-width:44em; }
+  .ask::before { content:"Ask Claude: "; font-style:normal; font-weight:700; color:var(--rose); }
+
+  .table-wrap { overflow-x:auto; margin:16px 0 24px; border-radius:12px; box-shadow:0 1px 2px rgb(46 35 40/.06); max-width:52em; }
+  table { border-collapse:collapse; width:100%; background:var(--white); font-size:.92rem; }
+  th, td { text-align:left; padding:10px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { background:var(--blush); font-weight:700; white-space:nowrap; }
+  td code { white-space:nowrap; }
+  tr.keep td { background:#f3f8f1; }
+  tr.add td { background:#fdf5f3; }
+  .pill { display:inline-block; font-size:.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; border-radius:999px; padding:1px 8px; }
+  .pill--add { background:var(--rose); color:#fff; }
+  .pill--keep { background:#2f6b3a; color:#fff; }
+  .pill--remove { background:var(--ink-soft); color:#fff; }
+
+  .checklist { list-style:none; padding:0; max-width:44em; }
+  .checklist li { padding:10px 0 10px 34px; position:relative; border-bottom:1px solid var(--line); }
+  .checklist li::before { content:""; position:absolute; left:0; top:13px; width:18px; height:18px; border:2px solid var(--rose-gold); border-radius:5px; }
+
+  dl.faq dt { font-weight:700; margin-top:18px; }
+  dl.faq dd { margin:4px 0 0; color:var(--ink-soft); max-width:44em; }
+
+  .source { font-size:.85rem; color:var(--ink-soft); }
+  footer.end { max-width:1180px; margin:0 auto; padding:24px; color:var(--ink-soft); font-size:.9rem; border-top:1px solid var(--line); }
+
+  @media print {
+    nav.toc { display:none; }
+    .layout { display:block; }
+    section.chapter { break-inside:auto; }
+    .diagram, .card, .tree { box-shadow:none; border:1px solid var(--line); }
+    pre { white-space:pre-wrap; }
+  }
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <p class="eyebrow">DesiTrue Services LLC</p>
+  <h1>Your website: how it works and how to change it</h1>
+  <p class="lead">Everything Desirée needs to look after desitrue.com: what each piece does, how to make everyday edits, how to use Claude Code on Windows to make bigger changes, and what to do on the day the domain moves. No coding experience needed.</p>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="Contents">
+    <p class="toc-title">Contents</p>
+    <ol>
+      <li><a href="#how">How your site works</a></li>
+      <li><a href="#files">The files</a></li>
+      <li><a href="#edits">Everyday changes</a></li>
+      <li><a href="#publish">Publishing a change</a></li>
+      <li><a href="#claude">Claude Code on Windows</a></li>
+      <li><a href="#ownership">Taking ownership</a></li>
+      <li><a href="#domain">Domain move day</a></li>
+      <li><a href="#trouble">Troubleshooting</a></li>
+      <li><a href="#todo">Still to fill in</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+  <!-- 1 -->
+  <section class="chapter" id="how">
+    <span class="num">01</span>
+    <h2>How your site works</h2>
+    <div class="prose">
+      <p>Your website is a handful of plain files: three pages, one stylesheet and some images. They live in a <strong>repository</strong> (a folder with full history) on <strong>GitHub</strong>. GitHub's free hosting service, <strong>GitHub Pages</strong>, puts those files on the internet. <strong>GoDaddy</strong> holds your domain name and tells browsers where to find the site.</p>
+    </div>
+
+    <figure>
+      <div class="diagram">
+        <svg viewBox="0 0 860 300" role="img" aria-label="Edits go from your computer to GitHub, which publishes them with GitHub Pages. A visitor's browser asks GoDaddy where desitrue.com is, is pointed to GitHub Pages, and loads the site from there.">
+          <defs>
+            <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker>
+            <marker id="ahr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a4a56"/></marker>
+          </defs>
+          <g font-family="DM Sans, Segoe UI, sans-serif" font-size="13" fill="currentColor">
+            <!-- top row: editing path -->
+            <rect x="20" y="40" width="170" height="70" rx="12" fill="#f6e6e2" stroke="currentColor" stroke-opacity=".25"/>
+            <text x="105" y="70" text-anchor="middle" font-weight="700">Your computer</text>
+            <text x="105" y="90" text-anchor="middle" font-size="12" opacity=".75">edit with Claude Code</text>
+
+            <rect x="345" y="40" width="170" height="70" rx="12" fill="#f6e6e2" stroke="currentColor" stroke-opacity=".25"/>
+            <text x="430" y="70" text-anchor="middle" font-weight="700">GitHub repository</text>
+            <text x="430" y="90" text-anchor="middle" font-size="12" opacity=".75">desitrue-site</text>
+
+            <rect x="670" y="40" width="170" height="70" rx="12" fill="#fff" stroke="#8a4a56" stroke-width="2"/>
+            <text x="755" y="70" text-anchor="middle" font-weight="700">GitHub Pages</text>
+            <text x="755" y="90" text-anchor="middle" font-size="12" opacity=".75">serves the site, free</text>
+
+            <line x1="190" y1="75" x2="343" y2="75" stroke="currentColor" stroke-width="1.5" marker-end="url(#ah)"/>
+            <text x="267" y="66" text-anchor="middle" font-size="12">push (upload)</text>
+            <line x1="515" y1="75" x2="668" y2="75" stroke="currentColor" stroke-width="1.5" marker-end="url(#ah)"/>
+            <text x="592" y="66" text-anchor="middle" font-size="12">publishes in ~1 min</text>
+
+            <!-- bottom row: visitor path -->
+            <rect x="20" y="200" width="170" height="70" rx="12" fill="#fff" stroke="currentColor" stroke-opacity=".25"/>
+            <text x="105" y="230" text-anchor="middle" font-weight="700">A visitor's browser</text>
+            <text x="105" y="250" text-anchor="middle" font-size="12" opacity=".75">types desitrue.com</text>
+
+            <rect x="345" y="200" width="170" height="70" rx="12" fill="#fff" stroke="currentColor" stroke-opacity=".25"/>
+            <text x="430" y="230" text-anchor="middle" font-weight="700">GoDaddy DNS</text>
+            <text x="430" y="250" text-anchor="middle" font-size="12" opacity=".75">the address book</text>
+
+            <line x1="190" y1="226" x2="343" y2="226" stroke="currentColor" stroke-width="1.5" marker-end="url(#ah)"/>
+            <text x="267" y="217" text-anchor="middle" font-size="12">1 · where is it?</text>
+            <line x1="343" y1="250" x2="192" y2="250" stroke="currentColor" stroke-width="1.5" marker-end="url(#ah)"/>
+            <text x="267" y="268" text-anchor="middle" font-size="12">2 · at GitHub Pages</text>
+
+            <path d="M105,200 C105,150 600,170 735,112" fill="none" stroke="#8a4a56" stroke-width="2" marker-end="url(#ahr)"/>
+            <text x="470" y="166" text-anchor="middle" font-size="12" fill="#8a4a56" font-weight="700">3 · loads the pages</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>The top row is how a change gets published. The bottom row is what happens when someone visits. GoDaddy only answers the question "where is desitrue.com?"; the pages themselves always come from GitHub Pages.</figcaption>
+    </figure>
+
+    <div class="cards">
+      <div class="card"><h4>What it costs</h4><p>GitHub and GitHub Pages: <strong>$0</strong>. The only bill is the yearly domain renewal at GoDaddy. Claude Code is optional and needs a paid Claude plan (see section 5).</p></div>
+      <div class="card"><h4>What it can't do</h4><p>The site has no database and no server of its own, so it can't take payments or store form entries. Booking goes through Calendly, and email and phone links open the visitor's own apps.</p></div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="chapter" id="files">
+    <span class="num">02</span>
+    <h2>The files</h2>
+    <p class="prose">Every page is its own file. To change something on the About page, you change <code>about.html</code>. Colours and fonts for the whole site live in one place: the top of <code>css/site.css</code>.</p>
+    <div class="tree" role="list">
+      <div role="listitem"><code>index.html</code><span>The home page: headline, the three service cards, "How it works", "Meet the founder".</span></div>
+      <div role="listitem"><code>about.html</code><span>Desirée's story, the three values, who DesiTrue helps.</span></div>
+      <div role="listitem"><code>contact.html</code><span>Booking (Calendly), email, phone, hours, and the questions section.</span></div>
+      <div role="listitem"><code>404.html</code><span>The friendly "page not found" page. GitHub shows it automatically.</span></div>
+      <div role="listitem"><code>css/site.css</code><span>The look of every page. The <strong>top section</strong> (<code>:root</code>) holds the brand colours, fonts and spacing.</span></div>
+      <div role="listitem"><code>assets/img/</code><span>Photos. Each one has a fixed name the pages expect (<code>hero.jpg</code>, <code>about-portrait.jpg</code>, <code>svc-financial.jpg</code>, <code>svc-admin.jpg</code>, <code>svc-creative.jpg</code>, <code>og-image.jpg</code>).</span></div>
+      <div role="listitem"><code>assets/favicon.svg</code><span>The little "D" icon in the browser tab.</span></div>
+      <div role="listitem"><code>ASSETS.html</code><span>Ready-made prompts for photos and the logo, each tied to its file name. Open it in a browser.</span></div>
+      <div role="listitem"><code>CLAUDE.md</code><span>Notes Claude Code reads automatically, so it knows the site's rules before you ask anything.</span></div>
+      <div role="listitem"><code>docs/OWNER-GUIDE.html</code><span>This guide.</span></div>
+    </div>
+    <div class="callout callout--tip"><p><strong>Brand colours at a glance.</strong> Cream <code>#FFFAF7</code> background · blush <code>#F6E6E2</code> sections · deep rose <code>#8A4A56</code> buttons and links · rose gold <code>#B76E79</code> for thin lines and icons only (it's too pale for text) · plum-charcoal <code>#2E2328</code> text. Headings use <em>Cormorant Garamond</em>, body text uses <em>DM Sans</em>.</p></div>
+  </section>
+
+  <!-- 3 -->
+  <section class="chapter" id="edits">
+    <span class="num">03</span>
+    <h2>Everyday changes</h2>
+    <p class="prose">Each change below can be made in two ways: ask Claude Code in plain words (section 5), or edit the file yourself on github.com (section 4). In the snippets, only the text between the tags changes. Leave everything inside the <code>&lt; &gt;</code> brackets alone.</p>
+
+    <h3>Change a sentence</h3>
+    <p class="prose">Find the sentence in the right page file and retype it.</p>
+    <div class="ba">
+      <div><div class="tag">Before · index.html</div><pre><code>&lt;p class="hero-note"&gt;Working with small businesses,
+busy professionals and families.&lt;/p&gt;</code></pre></div>
+      <div><div class="tag">After</div><pre><code>&lt;p class="hero-note"&gt;Serving clients across
+[your region] since 2020.&lt;/p&gt;</code></pre></div>
+    </div>
+    <div class="ask">On the home page, change the line under the buttons to "Serving clients across your area since 2020."</div>
+
+    <h3>Fill in your email and phone everywhere</h3>
+    <p class="prose">The pages contain the placeholders <code>[email]</code> and <code>[phone]</code> in several places (the footer on every page plus the Contact page). Phone links need the number written without spaces, with the country code: <code>tel:+15555550123</code>.</p>
+    <div class="ba">
+      <div><div class="tag">Before</div><pre><code>&lt;a href="mailto:[email]"&gt;[email]&lt;/a&gt;
+&lt;a href="tel:[phone]"&gt;[phone]&lt;/a&gt;</code></pre></div>
+      <div><div class="tag">After</div><pre><code>&lt;a href="mailto:hello@desitrue.com"&gt;hello@desitrue.com&lt;/a&gt;
+&lt;a href="tel:+15555550123"&gt;(555) 555-0123&lt;/a&gt;</code></pre></div>
+    </div>
+    <div class="ask">Replace every [email] on the site with hello@desitrue.com and every [phone] with (555) 555-0123. Use +15555550123 inside the tel: links.</div>
+
+    <h3>Swap in a photo</h3>
+    <p class="prose">No code to change. Make the image (prompts are in <code>ASSETS.html</code>), crop and resize it to the size listed there, name it exactly as listed, and put it in <code>assets/img/</code>, replacing any file with the same name. Until a photo exists, the site shows a soft rose-gold shape in its place on wide screens and hides the space on phones.</p>
+    <div class="ask">Here is my new headshot (attach the file). Crop it to 4:5, resize it to 1000×1250, save it as assets/img/about-portrait.jpg, and show me the About page.</div>
+
+    <h3>Turn on Calendly booking</h3>
+    <p class="prose">In <code>contact.html</code>, find the line with <code>calendly-inline-widget</code> and paste your Calendly link between the quotes after <code>data-url=</code>. The calendar appears automatically and the "coming soon" box disappears.</p>
+    <div class="ba">
+      <div><div class="tag">Before · contact.html</div><pre><code>&lt;div class="calendly-inline-widget" data-url="" hidden&gt;&lt;/div&gt;</code></pre></div>
+      <div><div class="tag">After</div><pre><code>&lt;div class="calendly-inline-widget"
+  data-url="https://calendly.com/desitrue/consultation" hidden&gt;&lt;/div&gt;</code></pre></div>
+    </div>
+    <p class="prose">Leave the word <code>hidden</code> in place; the page removes it itself once a link is there. Your Calendly link is under <em>Share</em> on any event type in Calendly.</p>
+
+    <h3>Add a service</h3>
+    <p class="prose">Each service card on the home page has a list of ticked items. Copy one <code>&lt;li&gt;…&lt;/li&gt;</code> line and change the words.</p>
+    <div class="ba">
+      <div><div class="tag">Before · index.html</div><pre><code>&lt;li&gt;Cash-flow forecasting&lt;/li&gt;
+&lt;li&gt;Tax preparation&lt;/li&gt;</code></pre></div>
+      <div><div class="tag">After</div><pre><code>&lt;li&gt;Cash-flow forecasting&lt;/li&gt;
+&lt;li&gt;Payroll&lt;/li&gt;
+&lt;li&gt;Tax preparation&lt;/li&gt;</code></pre></div>
+    </div>
+    <div class="ask">Add "Payroll" to the Money &amp; bookkeeping card on the home page.</div>
+  </section>
+
+  <!-- 4 -->
+  <section class="chapter" id="publish">
+    <span class="num">04</span>
+    <h2>Publishing a change</h2>
+    <div class="prose">
+      <p>A change goes live when it is <strong>committed</strong> (saved into the history with a short note) and <strong>pushed</strong> (uploaded to GitHub). About a minute later, GitHub Pages republishes the site. Every earlier version is kept, so any mistake can be undone.</p>
+    </div>
+
+    <h3>Quick fix on github.com, nothing to install</h3>
+    <ol class="steps">
+      <li><strong>Open the file</strong>Go to your repository on github.com and click the file, for example <code>contact.html</code>.</li>
+      <li><strong>Click the pencil icon</strong>It's at the top right of the file ("Edit this file").</li>
+      <li><strong>Make the change</strong>Use <kbd>Ctrl</kbd>+<kbd>F</kbd> to find the text.</li>
+      <li><strong>Click "Commit changes…"</strong>Write a short note such as "Update phone number", keep "Commit directly to the main branch" selected, and confirm.</li>
+      <li><strong>Wait a minute and refresh the site</strong>Press <kbd>Ctrl</kbd>+<kbd>F5</kbd> to skip your browser's saved copy.</li>
+    </ol>
+
+    <h3>Checking that it published</h3>
+    <p class="prose">In the repository, open the <strong>Actions</strong> tab. The newest run, called <em>pages build and deployment</em>, shows a green tick when the site is live, or a red cross if something went wrong (see section 8).</p>
+  </section>
+
+  <!-- 5 -->
+  <section class="chapter" id="claude">
+    <span class="num">05</span>
+    <h2>Making changes with Claude Code on Windows</h2>
+    <div class="prose">
+      <p>Claude Code is an AI assistant that works directly in your website folder. You describe the change in plain words ("add a testimonials section that matches the design"); it edits the files, shows you a preview, and publishes the change when you say so. It's the easiest way to make anything bigger than a one-line edit.</p>
+    </div>
+    <div class="callout callout--tip"><p><strong>What you need.</strong> A Windows 10 or 11 PC (64-bit). A paid Claude plan: Pro, Max, Team or Enterprise; the free plan doesn't include Claude Code. And a free GitHub account, which you will have anyway once the site is yours (section 6).</p></div>
+
+    <h3>One-time setup (about 15 minutes)</h3>
+    <ol class="steps">
+      <li><strong>Install the Claude desktop app.</strong>Download it from <a href="https://claude.com/download">claude.com/download</a> (Windows), run the installer, open <em>Claude</em> from the Start menu and sign in with your Claude account.</li>
+      <li><strong>Install Git for Windows.</strong>Download it from <a href="https://git-scm.com/download/win">git-scm.com/download/win</a> and click through the installer with the default choices. Git is the tool that saves versions and uploads them to GitHub. You won't need to learn it, because Claude runs it for you. It also handles your GitHub sign-in: the first time something is uploaded, a browser window asks you to log in to GitHub.</li>
+      <li><strong>Open the Code tab.</strong>In the Claude app, click <strong>Code</strong> at the top. Choose <strong>Local</strong>, click <strong>Select folder</strong>, and pick (or create) a folder such as <code>Documents\Websites</code>. If the Code tab asks you to upgrade, your plan doesn't include Claude Code.</li>
+      <li><strong>Download the site.</strong>Ask Claude:
+        <div class="ask">Clone https://github.com/&lt;your-username&gt;/desitrue-site into this folder.</div>
+        Then start a new session with <strong>Select folder</strong> pointing at the new <code>desitrue-site</code> folder. From then on, always open that folder.</li>
+      <li><strong>Pick the safe mode.</strong>Choose the <strong>Manual</strong> (ask before each change) permission mode. Claude then shows each change as a before-and-after and waits for you to click <em>Accept</em>.</li>
+    </ol>
+    <p class="source">Prefer a terminal? The command-line version installs from PowerShell (not as Administrator) with <code>irm https://claude.ai/install.ps1 | iex</code>. Open a new window afterwards and type <code>claude</code>. Sources: <a href="https://code.claude.com/docs/en/desktop-quickstart">desktop quickstart</a>, <a href="https://code.claude.com/docs/en/setup">setup and requirements</a>. Checked October 2026.</p>
+
+    <h3>How a change goes</h3>
+    <figure>
+      <div class="diagram">
+        <svg viewBox="0 0 860 150" role="img" aria-label="The loop for a change: you ask, Claude edits, you look at the preview, and only when you approve does Claude commit and push, after which the site updates in about a minute. If the preview is wrong, you ask for changes and it loops back.">
+          <defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
+          <g font-family="DM Sans, Segoe UI, sans-serif" font-size="13" fill="currentColor">
+            <rect x="10" y="30" width="140" height="56" rx="12" fill="#f6e6e2"/><text x="80" y="63" text-anchor="middle" font-weight="700">You ask</text>
+            <rect x="190" y="30" width="140" height="56" rx="12" fill="#f6e6e2"/><text x="260" y="63" text-anchor="middle" font-weight="700">Claude edits</text>
+            <rect x="370" y="30" width="140" height="56" rx="12" fill="#fff" stroke="#8a4a56" stroke-width="2"/><text x="440" y="56" text-anchor="middle" font-weight="700">You preview</text><text x="440" y="74" text-anchor="middle" font-size="11.5" opacity=".75">Browser pane</text>
+            <rect x="550" y="30" width="140" height="56" rx="12" fill="#f6e6e2"/><text x="620" y="56" text-anchor="middle" font-weight="700">Commit + push</text><text x="620" y="74" text-anchor="middle" font-size="11.5" opacity=".75">only when you say</text>
+            <rect x="730" y="30" width="120" height="56" rx="12" fill="#fff" stroke="currentColor" stroke-opacity=".25"/><text x="790" y="63" text-anchor="middle" font-weight="700">Site live</text>
+            <line x1="150" y1="58" x2="188" y2="58" stroke="currentColor" stroke-width="1.5" marker-end="url(#ah2)"/>
+            <line x1="330" y1="58" x2="368" y2="58" stroke="currentColor" stroke-width="1.5" marker-end="url(#ah2)"/>
+            <line x1="510" y1="58" x2="548" y2="58" stroke="currentColor" stroke-width="1.5" marker-end="url(#ah2)"/><text x="529" y="48" text-anchor="middle" font-size="11.5">looks right</text>
+            <line x1="690" y1="58" x2="728" y2="58" stroke="currentColor" stroke-width="1.5" marker-end="url(#ah2)"/><text x="709" y="48" text-anchor="middle" font-size="11.5">~1 min</text>
+            <path d="M440,86 C440,135 260,135 260,88" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ah2)"/>
+            <text x="350" y="138" text-anchor="middle" font-size="11.5">not quite: "make the heading smaller"</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>Nothing reaches the public site until you approve the preview and ask Claude to publish. Press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd> in the desktop app to open the Browser pane, or click any <code>.html</code> file name Claude mentions to open it there.</figcaption>
+    </figure>
+
+    <h3>Things to ask</h3>
+    <div class="ask">Change my phone number to (555) 555-0123 on every page.</div>
+    <div class="ask">Add a testimonials section to the home page, above "Meet the founder", that matches the design. Use these three quotes: …</div>
+    <div class="ask">The headline feels too long on a phone. Show me two shorter options.</div>
+    <div class="ask">Show me the contact page in the Browser pane at phone size.</div>
+    <div class="ask">That looks good. Commit it with a short note and push it.</div>
+    <div class="ask">Undo the last change I published.</div>
+
+    <h3>Good habits</h3>
+    <ul class="prose">
+      <li><strong>Preview before publishing.</strong> End requests with "show me before you push".</li>
+      <li><strong>One change at a time.</strong> Small changes are easy to check and easy to undo.</li>
+      <li><strong>The repository is public.</strong> Anyone can read the files, so never ask Claude to put passwords, client details or private documents in this folder.</li>
+      <li><strong>Leave the domain settings alone.</strong> Don't ask Claude to change the <code>CNAME</code> file or anything in GoDaddy. Those are set once on domain move day (section 7).</li>
+    </ul>
+  </section>
+
+  <!-- 6 -->
+  <section class="chapter" id="ownership">
+    <span class="num">06</span>
+    <h2>Taking ownership of the site</h2>
+    <div class="prose">
+      <p>The site starts out in Rick's GitHub account. Moving it to yours takes about five minutes. Do it <strong>before</strong> domain move day, so the domain is pointed at your account once and never needs changing again. The full history comes along, and GitHub forwards the old address to the new one.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h4>Desirée</h4>
+        <ol class="steps" style="margin:0">
+          <li>Create a free account at <a href="https://github.com/signup">github.com/signup</a> and send Rick your username.</li>
+          <li>Open the email from GitHub and click <strong>Accept transfer</strong>. The link expires after a day; if it does, Rick sends it again.</li>
+          <li>In the repository: <strong>Settings → Pages</strong>. Under <em>Build and deployment</em>, set Source to <em>Deploy from a branch</em>, branch <code>main</code>, folder <code>/ (root)</code>, and click Save.</li>
+          <li>About a minute later, the site is at <code>https://&lt;your-username&gt;.github.io/desitrue-site/</code>.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h4>Rick</h4>
+        <ol class="steps" style="margin:0">
+          <li>In the repository: <strong>Settings → General</strong>, scroll to <em>Danger Zone</em>, click <strong>Transfer ownership</strong>.</li>
+          <li>Choose <em>Specify an organization or username</em>, enter Desirée's username, type the repository name to confirm, and click <strong>I understand, transfer this repository</strong>.</li>
+          <li>Optional: ask to be added as a collaborator (<strong>Settings → Collaborators</strong>) to keep helping.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="chapter" id="domain">
+    <span class="num">07</span>
+    <h2>Domain move day</h2>
+    <div class="prose">
+      <p>Right now desitrue.com points at a Google Site. Once the domain is managed at GoDaddy, one change in GoDaddy's DNS settings points it at the new site instead. Your email is separate: it is routed by different records, which must stay exactly as they are.</p>
+    </div>
+
+    <figure>
+      <div class="diagram">
+        <svg viewBox="0 0 860 260" role="img" aria-label="Before and after the move. The website records change from Google Sites to GitHub Pages. The email (MX) records point at the same mail provider before and after, untouched.">
+          <defs><marker id="ah3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker>
+          <marker id="ah3r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a4a56"/></marker>
+          <marker id="ah3g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2f6b3a"/></marker></defs>
+          <g font-family="DM Sans, Segoe UI, sans-serif" font-size="13" fill="currentColor">
+            <text x="200" y="22" text-anchor="middle" font-weight="700" font-size="14">Before</text>
+            <text x="640" y="22" text-anchor="middle" font-weight="700" font-size="14">After</text>
+            <line x1="430" y1="10" x2="430" y2="250" stroke="currentColor" stroke-opacity=".15"/>
+
+            <rect x="20" y="95" width="130" height="64" rx="12" fill="#f6e6e2"/><text x="85" y="122" text-anchor="middle" font-weight="700">desitrue.com</text><text x="85" y="141" text-anchor="middle" font-size="11.5" opacity=".75">DNS records</text>
+            <rect x="250" y="40" width="160" height="56" rx="12" fill="#fff" stroke="currentColor" stroke-opacity=".25"/><text x="330" y="73" text-anchor="middle" opacity=".7">Google Sites</text>
+            <rect x="250" y="170" width="160" height="56" rx="12" fill="#fff" stroke="#2f6b3a" stroke-width="2"/><text x="330" y="203" text-anchor="middle">Email provider</text>
+            <path d="M150,112 L248,70" stroke="currentColor" stroke-opacity=".6" stroke-width="1.5" fill="none" marker-end="url(#ah3)"/><text x="185" y="78" font-size="11.5">website</text>
+            <path d="M150,142 L248,196" stroke="#2f6b3a" stroke-width="1.5" fill="none" marker-end="url(#ah3g)"/><text x="174" y="196" font-size="11.5" fill="#2f6b3a">email (MX)</text>
+
+            <rect x="460" y="95" width="130" height="64" rx="12" fill="#f6e6e2"/><text x="525" y="122" text-anchor="middle" font-weight="700">desitrue.com</text><text x="525" y="141" text-anchor="middle" font-size="11.5" opacity=".75">DNS at GoDaddy</text>
+            <rect x="690" y="40" width="160" height="56" rx="12" fill="#fff" stroke="#8a4a56" stroke-width="2"/><text x="770" y="73" text-anchor="middle" font-weight="700" fill="#8a4a56">GitHub Pages</text>
+            <rect x="690" y="170" width="160" height="56" rx="12" fill="#fff" stroke="#2f6b3a" stroke-width="2"/><text x="770" y="203" text-anchor="middle">Email provider</text>
+            <path d="M590,112 L688,70" stroke="#8a4a56" stroke-width="2" fill="none" marker-end="url(#ah3r)"/><text x="612" y="78" font-size="11.5" fill="#8a4a56" font-weight="700">website: changes</text>
+            <path d="M590,142 L688,196" stroke="#2f6b3a" stroke-width="1.5" fill="none" marker-end="url(#ah3g)"/><text x="606" y="196" font-size="11.5" fill="#2f6b3a">email: untouched</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>Only the website records change. The email records (MX, plus the TXT records that prove the email is genuine) point to the same place before and after.</figcaption>
+    </figure>
+
+    <div class="callout callout--warn"><p><strong>Protect your email.</strong> Before the domain transfer, take a screenshot of every DNS record at the current provider. Transfers sometimes reset DNS to GoDaddy's defaults. If that happens, email stops arriving until the <code>MX</code> and email <code>TXT</code> records are re-entered exactly as they were.</p></div>
+
+    <h3>The steps</h3>
+    <ol class="steps">
+      <li><strong>Prove the domain is yours to GitHub.</strong>On github.com: your profile picture → <strong>Settings → Pages</strong> → <strong>Add a domain</strong> → enter <code>desitrue.com</code>. GitHub shows a TXT record. Add it in GoDaddy (step 2), come back and click <strong>Verify</strong>. This stops anyone else's GitHub site from claiming your domain.</li>
+      <li><strong>In GoDaddy, open DNS for desitrue.com</strong>(<em>My Products → Domains → desitrue.com → DNS</em>) and make the table look like the one below.</li>
+      <li><strong>Tell GitHub the domain.</strong>Repository → <strong>Settings → Pages</strong> → <em>Custom domain</em>: type <code>desitrue.com</code> and Save. GitHub adds a file called <code>CNAME</code> to the site for you and runs a DNS check, which can take from a few minutes to a few hours.</li>
+      <li><strong>Turn on the padlock.</strong>When the check passes, tick <strong>Enforce HTTPS</strong> on the same page. The certificate can take up to an hour to appear.</li>
+      <li><strong>Finish with Claude.</strong>
+        <div class="ask">The site is now live at desitrue.com. Update the og:image tags on every page to the full address https://desitrue.com/assets/img/og-image.jpg, then commit and push.</div></li>
+    </ol>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th></th><th>Type</th><th>Name</th><th>Value</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr class="add"><td><span class="pill pill--add">Add</span></td><td>A</td><td><code>@</code></td><td><code>185.199.108.153</code></td><td rowspan="4">Points desitrue.com at GitHub Pages (four addresses for reliability)</td></tr>
+          <tr class="add"><td><span class="pill pill--add">Add</span></td><td>A</td><td><code>@</code></td><td><code>185.199.109.153</code></td></tr>
+          <tr class="add"><td><span class="pill pill--add">Add</span></td><td>A</td><td><code>@</code></td><td><code>185.199.110.153</code></td></tr>
+          <tr class="add"><td><span class="pill pill--add">Add</span></td><td>A</td><td><code>@</code></td><td><code>185.199.111.153</code></td></tr>
+          <tr class="add"><td><span class="pill pill--add">Add</span></td><td>CNAME</td><td><code>www</code></td><td><code>&lt;your-username&gt;.github.io</code></td><td>Makes www.desitrue.com work too</td></tr>
+          <tr class="add"><td><span class="pill pill--add">Add</span></td><td>TXT</td><td><code>_github-pages-challenge-…</code></td><td>(the value GitHub gives you)</td><td>Step 1 domain verification</td></tr>
+          <tr><td><span class="pill pill--remove">Remove</span></td><td>A / CNAME</td><td><code>@</code>, <code>www</code></td><td>anything else, e.g. <code>ghs.googlehosted.com</code> or GoDaddy "Parked"</td><td>Old website or parking-page records</td></tr>
+          <tr class="keep"><td><span class="pill pill--keep">Keep</span></td><td>MX</td><td><code>@</code></td><td>whatever is there now</td><td>Delivers your email</td></tr>
+          <tr class="keep"><td><span class="pill pill--keep">Keep</span></td><td>TXT</td><td><code>@</code>, <code>google._domainkey</code></td><td>e.g. <code>v=spf1 …</code>, <code>v=DKIM1 …</code>, <code>google-site-verification=…</code></td><td>Proves your email is genuine, so it doesn't land in spam</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="source">GitHub Pages addresses from <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">GitHub's custom domain guide</a>. If GoDaddy asks, the optional IPv6 (AAAA) records are listed there too.</p>
+  </section>
+
+  <!-- 8 -->
+  <section class="chapter" id="trouble">
+    <span class="num">08</span>
+    <h2>Troubleshooting</h2>
+    <dl class="faq">
+      <dt>I published a change but the site looks the same.</dt>
+      <dd>Wait two minutes, then press <kbd>Ctrl</kbd>+<kbd>F5</kbd>. Check the <strong>Actions</strong> tab for a green tick. A red cross usually means the publish step failed; click it to see why, or ask Claude to look.</dd>
+      <dt>GitHub says "Domain's DNS record could not be retrieved" or "improperly configured".</dt>
+      <dd>DNS changes can take a few hours to spread. Re-check the table in section 7, especially that no old A or CNAME record for <code>@</code> or <code>www</code> is left over. Then click <em>Check again</em> in Settings → Pages.</dd>
+      <dt>A photo doesn't show.</dt>
+      <dd>The file name must match exactly, including lowercase letters and <code>.jpg</code> (not <code>.jpeg</code> or <code>.JPG</code>), and the file must be inside <code>assets/img/</code>.</dd>
+      <dt>The Calendly calendar doesn't appear.</dt>
+      <dd>Check that the link in <code>contact.html</code> starts with <code>https://calendly.com/</code> and sits between the quotes after <code>data-url=</code>. Some ad blockers hide Calendly; try a private window.</dd>
+      <dt>The "page not found" page looks unstyled.</dt>
+      <dd>That's expected on the temporary <code>github.io</code> address. It looks right once the site is on desitrue.com.</dd>
+      <dt>Email stopped arriving after the domain move.</dt>
+      <dd>The MX or email TXT records were changed or removed. Put them back exactly as in your "before" screenshot (section 7).</dd>
+      <dt>Something broke and I want the old version back.</dt>
+      <dd>Nothing is ever lost. Ask Claude: "Undo my last published change." On github.com you can also open the file, click <strong>History</strong>, and copy the older version back.</dd>
+    </dl>
+  </section>
+
+  <!-- 9 -->
+  <section class="chapter" id="todo">
+    <span class="num">09</span>
+    <h2>Still to fill in</h2>
+    <p class="prose">The first draft uses placeholders in square brackets wherever only Desirée knows the answer. Asking Claude "find every placeholder in square brackets" lists whatever is left.</p>
+    <ul class="checklist">
+      <li><strong>Email</strong>: <code>[email]</code> in every footer and on the Contact page.</li>
+      <li><strong>Phone</strong>: <code>[phone]</code> in the same places, with <code>tel:+1…</code> in the links.</li>
+      <li><strong>Hours</strong> and <strong>city</strong>: <code>[hours…]</code> and <code>[City]</code> on the Contact page.</li>
+      <li><strong>Her story</strong>: two bracketed sentences on the About page (background, and why she started DesiTrue).</li>
+      <li><strong>Check the name story</strong>: the About page says "Desi from Desirée, True from Truesdale". Confirm that's right, or reword it.</li>
+      <li><strong>Calendly link</strong>: section 3.</li>
+      <li><strong>Photos</strong>: a real headshot for <code>about-portrait.jpg</code>, plus the photos in <code>ASSETS.html</code>.</li>
+      <li><strong>Logo</strong>: optional; the "D" badge works until there is one.</li>
+      <li><strong>Tax preparation</strong>: anyone paid to prepare US federal returns needs a PTIN from the IRS. Confirm hers is current before tax preparation is advertised, and mention any EA or CPA credential, which builds trust.</li>
+      <li><strong>Read every line once</strong>: the copy is a first draft written for her. Change anything that doesn't sound like her.</li>
+    </ul>
+  </section>
+
+  </main>
+</div>
+
+<footer class="end">Guide for the DesiTrue Services LLC website · written October 2026 · the source for every step is the site itself, so when a step and the files disagree, the files win.</footer>
+</body>
+</html>
