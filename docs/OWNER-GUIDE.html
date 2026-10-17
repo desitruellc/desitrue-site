@@ -41,7 +41,7 @@
   nav.toc ol { list-style:none; margin:0; padding:0; counter-reset:toc; }
   nav.toc li { counter-increment:toc; }
   nav.toc a { display:flex; gap:10px; padding:6px 10px; border-radius:8px; color:var(--ink-soft); text-decoration:none; }
-  nav.toc a::before { content:counter(toc); color:var(--rose-gold); font-weight:700; min-width:1.2em; }
+  nav.toc a::before { content:counter(toc); color:var(--rose); font-weight:700; min-width:1.2em; }
   nav.toc a:hover { background:var(--blush); color:var(--ink); }
   .toc-title { font-weight:700; margin:0 0 8px 10px; }
   @media (min-width:1000px) { nav.toc { position:sticky; top:24px; align-self:start; max-height:calc(100vh - 48px); overflow:auto; } }
@@ -50,7 +50,7 @@
   main { min-width:0; padding-bottom:96px; }
   section.chapter { padding:40px 0; border-top:1px solid var(--line); }
   section.chapter:first-child { border-top:0; padding-top:0; }
-  .num { font-family:"DM Sans", sans-serif; font-size:.85rem; font-weight:700; color:var(--rose-gold); letter-spacing:.1em; display:block; margin-bottom:6px; }
+  .num { font-family:"DM Sans", sans-serif; font-size:.85rem; font-weight:700; color:var(--rose); letter-spacing:.1em; display:block; margin-bottom:6px; }
   .prose { max-width:44em; }
 
   .callout { border-radius:12px; padding:16px 20px; margin:20px 0; max-width:44em; }
@@ -155,7 +155,7 @@
     <span class="num">01</span>
     <h2>How your site works</h2>
     <div class="prose">
-      <p>Your website is a handful of plain files: three pages, one stylesheet and some images. They live in a <strong>repository</strong> (a folder with full history) on <strong>GitHub</strong>. GitHub's free hosting service, <strong>GitHub Pages</strong>, puts those files on the internet. <strong>GoDaddy</strong> holds your domain name and tells browsers where to find the site.</p>
+      <p>Your website is a handful of plain files: four pages, one stylesheet and some images. They live in a <strong>repository</strong> (a folder with full history) on <strong>GitHub</strong>. GitHub's free hosting service, <strong>GitHub Pages</strong>, puts those files on the internet. <strong>GoDaddy</strong> holds your domain name and tells browsers where to find the site.</p>
     </div>
 
     <figure>
@@ -225,7 +225,7 @@
       <div role="listitem"><code>css/site.css</code><span>The look of every page. The <strong>top section</strong> (<code>:root</code>) holds the brand colours, fonts and spacing.</span></div>
       <div role="listitem"><code>assets/img/</code><span>Photos. Each one has a fixed name the pages expect (<code>hero.jpg</code>, <code>about-portrait.jpg</code>, <code>svc-financial.jpg</code>, <code>svc-admin.jpg</code>, <code>svc-creative.jpg</code>, <code>og-image.jpg</code>).</span></div>
       <div role="listitem"><code>assets/favicon.svg</code><span>The little "D" icon in the browser tab.</span></div>
-      <div role="listitem"><code>ASSETS.html</code><span>Ready-made prompts for photos and the logo, each tied to its file name. Open it in a browser.</span></div>
+      <div role="listitem"><code>ASSETS.html</code><span>Ready-made prompts for photos and the logo, each tied to its file name. Open it on the live site at <code>…/desitrue-site/ASSETS.html</code> (on github.com it shows as code).</span></div>
       <div role="listitem"><code>CLAUDE.md</code><span>Notes Claude Code reads automatically, so it knows the site's rules before you ask anything.</span></div>
       <div role="listitem"><code>docs/OWNER-GUIDE.html</code><span>This guide.</span></div>
     </div>
@@ -236,7 +236,7 @@
   <section class="chapter" id="edits">
     <span class="num">03</span>
     <h2>Everyday changes</h2>
-    <p class="prose">Each change below can be made in two ways: ask Claude Code in plain words (section 5), or edit the file yourself on github.com (section 4). In the snippets, only the text between the tags changes. Leave everything inside the <code>&lt; &gt;</code> brackets alone.</p>
+    <p class="prose">Each change below can be made in two ways: ask Claude Code in plain words (section 5), or edit the file yourself on github.com (section 4). In each snippet, change only the words you mean to change. Keep the angle brackets <code>&lt; &gt;</code>, quote marks and equals signs exactly as they are.</p>
 
     <h3>Change a sentence</h3>
     <p class="prose">Find the sentence in the right page file and retype it.</p>
@@ -249,7 +249,7 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
     <div class="ask">On the home page, change the line under the buttons to "Serving clients across your area since 2020."</div>
 
     <h3>Fill in your email and phone everywhere</h3>
-    <p class="prose">The pages contain the placeholders <code>[email]</code> and <code>[phone]</code> in several places (the footer on every page plus the Contact page). Phone links need the number written without spaces, with the country code: <code>tel:+15555550123</code>.</p>
+    <p class="prose">The placeholders <code>[email]</code> and <code>[phone]</code> appear in the footer of all four pages (<code>index.html</code>, <code>about.html</code>, <code>contact.html</code>, <code>404.html</code>) and in the Contact page's details box and booking box. Each one appears twice per spot: once inside the link and once as the text people see. This change is quickest with Claude; on github.com, edit each of the four files in turn. Phone links need the number written without spaces, with the country code: <code>tel:+15555550123</code>.</p>
     <div class="ba">
       <div><div class="tag">Before</div><pre><code>&lt;a href="mailto:[email]"&gt;[email]&lt;/a&gt;
 &lt;a href="tel:[phone]"&gt;[phone]&lt;/a&gt;</code></pre></div>
@@ -259,11 +259,11 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
     <div class="ask">Replace every [email] on the site with hello@desitrue.com and every [phone] with (555) 555-0123. Use +15555550123 inside the tel: links.</div>
 
     <h3>Swap in a photo</h3>
-    <p class="prose">No code to change. Make the image (prompts are in <code>ASSETS.html</code>), crop and resize it to the size listed there, name it exactly as listed, and put it in <code>assets/img/</code>, replacing any file with the same name. Until a photo exists, the site shows a soft rose-gold shape in its place on wide screens and hides the space on phones.</p>
+    <p class="prose">No code to change. Make the image (prompts are in <code>ASSETS.html</code>), crop and resize it to the size listed there, name it exactly as listed, and put it in <code>assets/img/</code>, replacing any file with the same name. Until a photo exists, the large arched frames show a soft rose-gold shape on wide screens, and everything else (the service card photos, and the arches on phones) is simply hidden. If you use the stand-in About photo from <code>ASSETS.html</code> instead of a real headshot, also ask Claude to change that image's description (its <code>alt</code> text), which currently says it is a portrait of Desirée.</p>
     <div class="ask">Here is my new headshot (attach the file). Crop it to 4:5, resize it to 1000×1250, save it as assets/img/about-portrait.jpg, and show me the About page.</div>
 
     <h3>Turn on Calendly booking</h3>
-    <p class="prose">In <code>contact.html</code>, find the line with <code>calendly-inline-widget</code> and paste your Calendly link between the quotes after <code>data-url=</code>. The calendar appears automatically and the "coming soon" box disappears.</p>
+    <p class="prose">In <code>contact.html</code>, find the line that starts with <code>&lt;div class="calendly-inline-widget"</code> and paste your Calendly link between the two quote marks after <code>data-url=</code>. The calendar appears automatically and the "coming soon" box disappears.</p>
     <div class="ba">
       <div><div class="tag">Before · contact.html</div><pre><code>&lt;div class="calendly-inline-widget" data-url="" hidden&gt;&lt;/div&gt;</code></pre></div>
       <div><div class="tag">After</div><pre><code>&lt;div class="calendly-inline-widget"
@@ -272,7 +272,7 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
     <p class="prose">Leave the word <code>hidden</code> in place; the page removes it itself once a link is there. Your Calendly link is under <em>Share</em> on any event type in Calendly.</p>
 
     <h3>Add a service</h3>
-    <p class="prose">Each service card on the home page has a list of ticked items. Copy one <code>&lt;li&gt;…&lt;/li&gt;</code> line and change the words.</p>
+    <p class="prose">Each service card on the home page has a list of ticked items. Copy one whole <code>&lt;li&gt;…&lt;/li&gt;</code> line, paste it on a new line of its own lined up with the others, and change the words.</p>
     <div class="ba">
       <div><div class="tag">Before · index.html</div><pre><code>&lt;li&gt;Cash-flow forecasting&lt;/li&gt;
 &lt;li&gt;Tax preparation&lt;/li&gt;</code></pre></div>
@@ -299,6 +299,8 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
       <li><strong>Click "Commit changes…"</strong>Write a short note such as "Update phone number", keep "Commit directly to the main branch" selected, and confirm.</li>
       <li><strong>Wait a minute and refresh the site</strong>Press <kbd>Ctrl</kbd>+<kbd>F5</kbd> to skip your browser's saved copy.</li>
     </ol>
+
+    <div class="callout callout--tip"><p><strong>No preview on github.com.</strong> Edits made this way go live without a preview, so keep them to small text fixes. For anything else, use Claude Code, which shows you the page before publishing (section 5).</p></div>
 
     <h3>Checking that it published</h3>
     <p class="prose">In the repository, open the <strong>Actions</strong> tab. The newest run, called <em>pages build and deployment</em>, shows a green tick when the site is live, or a red cross if something went wrong (see section 8).</p>
@@ -358,6 +360,7 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
 
     <h3>Good habits</h3>
     <ul class="prose">
+      <li><strong>Start fresh.</strong> Begin each session with "pull the latest changes from GitHub", so you're never working on an old copy.</li>
       <li><strong>Preview before publishing.</strong> End requests with "show me before you push".</li>
       <li><strong>One change at a time.</strong> Small changes are easy to check and easy to undo.</li>
       <li><strong>The repository is public.</strong> Anyone can read the files, so never ask Claude to put passwords, client details or private documents in this folder.</li>
@@ -370,7 +373,7 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
     <span class="num">06</span>
     <h2>Taking ownership of the site</h2>
     <div class="prose">
-      <p>The site starts out in Rick's GitHub account. Moving it to yours takes about five minutes. Do it <strong>before</strong> domain move day, so the domain is pointed at your account once and never needs changing again. The full history comes along, and GitHub forwards the old address to the new one.</p>
+      <p>The site starts out in Rick's GitHub account. Moving it to yours takes about five minutes. Do it <strong>before</strong> domain move day, so the domain is pointed at your account once and never needs changing again. The full history comes along, and GitHub forwards links to the old repository. The old <em>website</em> address is not forwarded: until the transfer the preview lives at <code>ulrictodman.com/desitrue-site/</code> (Rick's account), and afterwards at <code>&lt;your-username&gt;.github.io/desitrue-site/</code>. Don't share either address publicly; share desitrue.com once it's live.</p>
     </div>
     <div class="cards">
       <div class="card">
@@ -385,7 +388,7 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
       <div class="card">
         <h4>Rick</h4>
         <ol class="steps" style="margin:0">
-          <li>In the repository: <strong>Settings → General</strong>, scroll to <em>Danger Zone</em>, click <strong>Transfer ownership</strong>.</li>
+          <li>In the repository: <strong>Settings → General</strong>, scroll to <em>Danger Zone</em>, click <strong>Transfer</strong>.</li>
           <li>Choose <em>Specify an organization or username</em>, enter Desirée's username, type the repository name to confirm, and click <strong>I understand, transfer this repository</strong>.</li>
           <li>Optional: ask to be added as a collaborator (<strong>Settings → Collaborators</strong>) to keep helping.</li>
         </ol>
@@ -429,16 +432,16 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
       <figcaption>Only the website records change. The email records (MX, plus the TXT records that prove the email is genuine) point to the same place before and after.</figcaption>
     </figure>
 
-    <div class="callout callout--warn"><p><strong>Protect your email.</strong> Before the domain transfer, take a screenshot of every DNS record at the current provider. Transfers sometimes reset DNS to GoDaddy's defaults. If that happens, email stops arriving until the <code>MX</code> and email <code>TXT</code> records are re-entered exactly as they were.</p></div>
+    <div class="callout callout--warn"><p><strong>Protect your email.</strong> Before the domain transfer, take a screenshot of every DNS record at the current provider. If the DNS is hosted where the domain is registered today (Squarespace, formerly Google Domains), the records do <strong>not</strong> move to GoDaddy with the domain, and GoDaddy starts with its own defaults. Email then stops arriving until every email record (<code>MX</code>, the <code>TXT</code> records, and any email <code>CNAME</code>s) is re-entered in GoDaddy exactly as it was.</p></div>
 
     <h3>The steps</h3>
     <ol class="steps">
-      <li><strong>Prove the domain is yours to GitHub.</strong>On github.com: your profile picture → <strong>Settings → Pages</strong> → <strong>Add a domain</strong> → enter <code>desitrue.com</code>. GitHub shows a TXT record. Add it in GoDaddy (step 2), come back and click <strong>Verify</strong>. This stops anyone else's GitHub site from claiming your domain.</li>
-      <li><strong>In GoDaddy, open DNS for desitrue.com</strong>(<em>My Products → Domains → desitrue.com → DNS</em>) and make the table look like the one below.</li>
-      <li><strong>Tell GitHub the domain.</strong>Repository → <strong>Settings → Pages</strong> → <em>Custom domain</em>: type <code>desitrue.com</code> and Save. GitHub adds a file called <code>CNAME</code> to the site for you and runs a DNS check, which can take from a few minutes to a few hours.</li>
+      <li><strong>Prove the domain is yours to GitHub.</strong>On github.com: your profile picture → <strong>Settings → Pages</strong> → <strong>Add a domain</strong> → enter <code>desitrue.com</code>. GitHub shows a TXT record. Add it in GoDaddy's DNS page (<em>Domain Portfolio → desitrue.com → DNS</em>; the menu names change now and then), wait a few minutes, then click <strong>Verify</strong>. This stops anyone else's GitHub site from claiming your domain.</li>
+      <li><strong>Tell GitHub the domain.</strong>Repository → <strong>Settings → Pages</strong> → <em>Custom domain</em>: type <code>desitrue.com</code> and Save. GitHub adds a file called <code>CNAME</code> to the site for you. Go straight on to the next step.</li>
+      <li><strong>Point the domain at GitHub.</strong>In GoDaddy's DNS page, make the records match the table below. GitHub's DNS check then passes on its own, which can take from a few minutes to a few hours.</li>
       <li><strong>Turn on the padlock.</strong>When the check passes, tick <strong>Enforce HTTPS</strong> on the same page. The certificate can take up to an hour to appear.</li>
       <li><strong>Finish with Claude.</strong>
-        <div class="ask">The site is now live at desitrue.com. Update the og:image tags on every page to the full address https://desitrue.com/assets/img/og-image.jpg, then commit and push.</div></li>
+        <div class="ask">Pull the latest changes from GitHub first. The site is now live at desitrue.com. Update the og:image tags on every page to the full address https://desitrue.com/assets/img/og-image.jpg, then commit and push.</div></li>
     </ol>
 
     <div class="table-wrap">
@@ -453,7 +456,8 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
           <tr class="add"><td><span class="pill pill--add">Add</span></td><td>TXT</td><td><code>_github-pages-challenge-…</code></td><td>(the value GitHub gives you)</td><td>Step 1 domain verification</td></tr>
           <tr><td><span class="pill pill--remove">Remove</span></td><td>A / CNAME</td><td><code>@</code>, <code>www</code></td><td>anything else, e.g. <code>ghs.googlehosted.com</code> or GoDaddy "Parked"</td><td>Old website or parking-page records</td></tr>
           <tr class="keep"><td><span class="pill pill--keep">Keep</span></td><td>MX</td><td><code>@</code></td><td>whatever is there now</td><td>Delivers your email</td></tr>
-          <tr class="keep"><td><span class="pill pill--keep">Keep</span></td><td>TXT</td><td><code>@</code>, <code>google._domainkey</code></td><td>e.g. <code>v=spf1 …</code>, <code>v=DKIM1 …</code>, <code>google-site-verification=…</code></td><td>Proves your email is genuine, so it doesn't land in spam</td></tr>
+          <tr class="keep"><td><span class="pill pill--keep">Keep</span></td><td>TXT</td><td><code>@</code>, <code>google._domainkey</code>, <code>_dmarc</code></td><td>e.g. <code>v=spf1 …</code>, <code>v=DKIM1 …</code>, <code>v=DMARC1 …</code>, <code>google-site-verification=…</code></td><td>Proves your email is genuine, so it doesn't land in spam</td></tr>
+          <tr class="keep"><td><span class="pill pill--keep">Keep</span></td><td>anything else</td><td></td><td>every record not listed under Remove</td><td>If in doubt, keep it</td></tr>
         </tbody>
       </table>
     </div>
@@ -474,7 +478,7 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
       <dt>The Calendly calendar doesn't appear.</dt>
       <dd>Check that the link in <code>contact.html</code> starts with <code>https://calendly.com/</code> and sits between the quotes after <code>data-url=</code>. Some ad blockers hide Calendly; try a private window.</dd>
       <dt>The "page not found" page looks unstyled.</dt>
-      <dd>That's expected on the temporary <code>github.io</code> address. It looks right once the site is on desitrue.com.</dd>
+      <dd>That's expected on the temporary preview address: the not-found page's styling and links only work at desitrue.com, where they point to the right place. Once the domain is live it works normally.</dd>
       <dt>Email stopped arriving after the domain move.</dt>
       <dd>The MX or email TXT records were changed or removed. Put them back exactly as in your "before" screenshot (section 7).</dd>
       <dt>Something broke and I want the old version back.</dt>
@@ -496,7 +500,7 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
       <li><strong>Calendly link</strong>: section 3.</li>
       <li><strong>Photos</strong>: a real headshot for <code>about-portrait.jpg</code>, plus the photos in <code>ASSETS.html</code>.</li>
       <li><strong>Logo</strong>: optional; the "D" badge works until there is one.</li>
-      <li><strong>Tax preparation</strong>: anyone paid to prepare US federal returns needs a PTIN from the IRS. Confirm hers is current before tax preparation is advertised, and mention any EA or CPA credential, which builds trust.</li>
+      <li><strong>Credentials</strong>: if you'd like to show credentials (for example EA, CPA or other certifications), add them to the About page. They build trust.</li>
       <li><strong>Read every line once</strong>: the copy is a first draft written for her. Change anything that doesn't sound like her.</li>
     </ul>
   </section>
