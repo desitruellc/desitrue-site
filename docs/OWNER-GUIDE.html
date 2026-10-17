@@ -86,6 +86,7 @@
 
   .ba { display:grid; gap:12px; margin:12px 0 20px; max-width:52em; }
   @media (min-width:760px) { .ba { grid-template-columns:1fr 1fr; } }
+  .ba > div { min-width:0; }
   .ba pre { margin:0; }
   .ba .tag { font-size:.75rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:6px; }
 
@@ -333,12 +334,12 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
             <rect x="10" y="30" width="140" height="56" rx="12" fill="#f6e6e2"/><text x="80" y="63" text-anchor="middle" font-weight="700">You ask</text>
             <rect x="190" y="30" width="140" height="56" rx="12" fill="#f6e6e2"/><text x="260" y="63" text-anchor="middle" font-weight="700">Claude edits</text>
             <rect x="370" y="30" width="140" height="56" rx="12" fill="#fff" stroke="#8a4a56" stroke-width="2"/><text x="440" y="56" text-anchor="middle" font-weight="700">You preview</text><text x="440" y="74" text-anchor="middle" font-size="11.5" opacity=".75">Browser pane</text>
-            <rect x="550" y="30" width="140" height="56" rx="12" fill="#f6e6e2"/><text x="620" y="56" text-anchor="middle" font-weight="700">Commit + push</text><text x="620" y="74" text-anchor="middle" font-size="11.5" opacity=".75">only when you say</text>
-            <rect x="730" y="30" width="120" height="56" rx="12" fill="#fff" stroke="currentColor" stroke-opacity=".25"/><text x="790" y="63" text-anchor="middle" font-weight="700">Site live</text>
+            <rect x="550" y="30" width="140" height="56" rx="12" fill="#f6e6e2"/><text x="620" y="56" text-anchor="middle" font-weight="700">Commit + push</text><text x="620" y="74" text-anchor="middle" font-size="11.5" opacity=".75">once you approve</text>
+            <rect x="730" y="30" width="120" height="56" rx="12" fill="#fff" stroke="currentColor" stroke-opacity=".25"/><text x="790" y="56" text-anchor="middle" font-weight="700">Site live</text><text x="790" y="74" text-anchor="middle" font-size="11.5" opacity=".75">~1 min later</text>
             <line x1="150" y1="58" x2="188" y2="58" stroke="currentColor" stroke-width="1.5" marker-end="url(#ah2)"/>
             <line x1="330" y1="58" x2="368" y2="58" stroke="currentColor" stroke-width="1.5" marker-end="url(#ah2)"/>
-            <line x1="510" y1="58" x2="548" y2="58" stroke="currentColor" stroke-width="1.5" marker-end="url(#ah2)"/><text x="529" y="48" text-anchor="middle" font-size="11.5">looks right</text>
-            <line x1="690" y1="58" x2="728" y2="58" stroke="currentColor" stroke-width="1.5" marker-end="url(#ah2)"/><text x="709" y="48" text-anchor="middle" font-size="11.5">~1 min</text>
+            <line x1="510" y1="58" x2="548" y2="58" stroke="currentColor" stroke-width="1.5" marker-end="url(#ah2)"/>
+            <line x1="690" y1="58" x2="728" y2="58" stroke="currentColor" stroke-width="1.5" marker-end="url(#ah2)"/>
             <path d="M440,86 C440,135 260,135 260,88" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ah2)"/>
             <text x="350" y="138" text-anchor="middle" font-size="11.5">not quite: "make the heading smaller"</text>
           </g>
@@ -407,21 +408,21 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
           <marker id="ah3r" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a4a56"/></marker>
           <marker id="ah3g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2f6b3a"/></marker></defs>
           <g font-family="DM Sans, Segoe UI, sans-serif" font-size="13" fill="currentColor">
-            <text x="200" y="22" text-anchor="middle" font-weight="700" font-size="14">Before</text>
-            <text x="640" y="22" text-anchor="middle" font-weight="700" font-size="14">After</text>
+            <text x="215" y="22" text-anchor="middle" font-weight="700" font-size="14">Before</text>
+            <text x="645" y="22" text-anchor="middle" font-weight="700" font-size="14">After</text>
             <line x1="430" y1="10" x2="430" y2="250" stroke="currentColor" stroke-opacity=".15"/>
 
-            <rect x="20" y="95" width="130" height="64" rx="12" fill="#f6e6e2"/><text x="85" y="122" text-anchor="middle" font-weight="700">desitrue.com</text><text x="85" y="141" text-anchor="middle" font-size="11.5" opacity=".75">DNS records</text>
-            <rect x="250" y="40" width="160" height="56" rx="12" fill="#fff" stroke="currentColor" stroke-opacity=".25"/><text x="330" y="73" text-anchor="middle" opacity=".7">Google Sites</text>
-            <rect x="250" y="170" width="160" height="56" rx="12" fill="#fff" stroke="#2f6b3a" stroke-width="2"/><text x="330" y="203" text-anchor="middle">Email provider</text>
-            <path d="M150,112 L248,70" stroke="currentColor" stroke-opacity=".6" stroke-width="1.5" fill="none" marker-end="url(#ah3)"/><text x="185" y="78" font-size="11.5">website</text>
-            <path d="M150,142 L248,196" stroke="#2f6b3a" stroke-width="1.5" fill="none" marker-end="url(#ah3g)"/><text x="174" y="196" font-size="11.5" fill="#2f6b3a">email (MX)</text>
+            <rect x="20" y="40" width="110" height="186" rx="12" fill="#f6e6e2"/><text x="75" y="128" text-anchor="middle" font-weight="700">desitrue.com</text><text x="75" y="147" text-anchor="middle" font-size="11.5" opacity=".75">DNS records</text>
+            <rect x="270" y="40" width="140" height="56" rx="12" fill="#fff" stroke="currentColor" stroke-opacity=".25"/><text x="340" y="73" text-anchor="middle" opacity=".7">Google Sites</text>
+            <rect x="270" y="170" width="140" height="56" rx="12" fill="#fff" stroke="#2f6b3a" stroke-width="2"/><text x="340" y="203" text-anchor="middle">Email provider</text>
+            <line x1="130" y1="68" x2="268" y2="68" stroke="currentColor" stroke-opacity=".6" stroke-width="1.5" marker-end="url(#ah3)"/><text x="199" y="59" text-anchor="middle" font-size="11.5">website</text>
+            <line x1="130" y1="198" x2="268" y2="198" stroke="#2f6b3a" stroke-width="1.5" marker-end="url(#ah3g)"/><text x="199" y="189" text-anchor="middle" font-size="11.5" fill="#2f6b3a">email (MX)</text>
 
-            <rect x="460" y="95" width="130" height="64" rx="12" fill="#f6e6e2"/><text x="525" y="122" text-anchor="middle" font-weight="700">desitrue.com</text><text x="525" y="141" text-anchor="middle" font-size="11.5" opacity=".75">DNS at GoDaddy</text>
-            <rect x="690" y="40" width="160" height="56" rx="12" fill="#fff" stroke="#8a4a56" stroke-width="2"/><text x="770" y="73" text-anchor="middle" font-weight="700" fill="#8a4a56">GitHub Pages</text>
-            <rect x="690" y="170" width="160" height="56" rx="12" fill="#fff" stroke="#2f6b3a" stroke-width="2"/><text x="770" y="203" text-anchor="middle">Email provider</text>
-            <path d="M590,112 L688,70" stroke="#8a4a56" stroke-width="2" fill="none" marker-end="url(#ah3r)"/><text x="612" y="78" font-size="11.5" fill="#8a4a56" font-weight="700">website: changes</text>
-            <path d="M590,142 L688,196" stroke="#2f6b3a" stroke-width="1.5" fill="none" marker-end="url(#ah3g)"/><text x="606" y="196" font-size="11.5" fill="#2f6b3a">email: untouched</text>
+            <rect x="450" y="40" width="110" height="186" rx="12" fill="#f6e6e2"/><text x="505" y="128" text-anchor="middle" font-weight="700">desitrue.com</text><text x="505" y="147" text-anchor="middle" font-size="11.5" opacity=".75">DNS at GoDaddy</text>
+            <rect x="700" y="40" width="140" height="56" rx="12" fill="#fff" stroke="#8a4a56" stroke-width="2"/><text x="770" y="73" text-anchor="middle" font-weight="700" fill="#8a4a56">GitHub Pages</text>
+            <rect x="700" y="170" width="140" height="56" rx="12" fill="#fff" stroke="#2f6b3a" stroke-width="2"/><text x="770" y="203" text-anchor="middle">Email provider</text>
+            <line x1="560" y1="68" x2="698" y2="68" stroke="#8a4a56" stroke-width="2" marker-end="url(#ah3r)"/><text x="629" y="59" text-anchor="middle" font-size="11.5" fill="#8a4a56" font-weight="700">website: changes</text>
+            <line x1="560" y1="198" x2="698" y2="198" stroke="#2f6b3a" stroke-width="1.5" marker-end="url(#ah3g)"/><text x="629" y="189" text-anchor="middle" font-size="11.5" fill="#2f6b3a">email: untouched</text>
           </g>
         </svg>
       </div>
