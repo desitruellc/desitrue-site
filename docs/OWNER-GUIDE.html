@@ -249,19 +249,28 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
     </div>
     <div class="ask">On the home page, change the line under the buttons to "Serving clients across your area since 2020."</div>
 
-    <h3>Fill in your email and phone everywhere</h3>
-    <p class="prose">The placeholders <code>[email]</code> and <code>[phone]</code> appear in the footer of all four pages (<code>index.html</code>, <code>about.html</code>, <code>contact.html</code>, <code>404.html</code>) and in the Contact page's details box. Each of those spots has it twice: once inside the link and once as the text people see. The Contact page's "Email to book" button also has <code>[email]</code> inside its link. This change is quickest with Claude; on github.com, edit each of the four files in turn. Phone links need the number written without spaces, with the country code: <code>tel:+15555550123</code>.</p>
+    <h3>Change your email or phone</h3>
+    <p class="prose">Your email (<code>desiree@desitrue.com</code>) and phone (<code>(908) 547-0885</code>) appear in the footer of all four pages (<code>index.html</code>, <code>about.html</code>, <code>contact.html</code>, <code>404.html</code>) and on the Contact page. Each spot has it twice: once inside the link and once as the text people see. Phone links are written without spaces and with the country code.</p>
     <div class="ba">
-      <div><div class="tag">Before</div><pre><code>&lt;a href="mailto:[email]"&gt;[email]&lt;/a&gt;
-&lt;a href="tel:[phone]"&gt;[phone]&lt;/a&gt;</code></pre></div>
-      <div><div class="tag">After</div><pre><code>&lt;a href="mailto:hello@desitrue.com"&gt;hello@desitrue.com&lt;/a&gt;
-&lt;a href="tel:+15555550123"&gt;(555) 555-0123&lt;/a&gt;</code></pre></div>
+      <div><div class="tag">Now</div><pre><code>&lt;a href="tel:+19085470885"&gt;(908) 547-0885&lt;/a&gt;</code></pre></div>
+      <div><div class="tag">Changed</div><pre><code>&lt;a href="tel:+19085550123"&gt;(908) 555-0123&lt;/a&gt;</code></pre></div>
     </div>
-    <div class="ask">Replace every [email] on the site with hello@desitrue.com and every [phone] with (555) 555-0123. Use +15555550123 inside the tel: links.</div>
+    <div class="ask">Change my phone number to (908) 555-0123 everywhere on the site.</div>
 
     <h3>Swap in a photo</h3>
     <p class="prose">No code to change. Make the image (prompts and sizes are in <code>docs/PHOTO-PROMPTS.md</code>, which reads best on github.com), crop and resize it to the size listed there, name it exactly as listed, and put it in <code>assets/img/</code>, replacing any file with the same name. Until a photo exists, the large arched frames show a soft rose-gold shape on wide screens, and everything else (the service card photos, and the arches on phones) is simply hidden. When you replace a photo with a different scene, also ask Claude to update that image's description (its <code>alt</code> text) to match.</p>
     <div class="ask">Here is my new headshot (attach the file). Crop it to 4:5, resize it to 1000×1250, save it as assets/img/about-portrait.jpg, and show me the About page.</div>
+
+    <h3>Set up Calendly (one time, about 10 minutes)</h3>
+    <p class="prose">Calendly lets visitors pick a free slot in your calendar and books it for you, with no back-and-forth emails. The free plan covers a single consultation booking type, which is all the site needs.</p>
+    <ol class="steps">
+      <li><strong>Create an account.</strong>Go to <a href="https://calendly.com/signup">calendly.com/signup</a> and sign up with <code>desiree@desitrue.com</code>.</li>
+      <li><strong>Connect your calendar.</strong>When asked, connect the calendar you actually use (Google or Outlook). Calendly then never offers a time you're already busy, and new bookings appear in your calendar automatically.</li>
+      <li><strong>Set your availability.</strong>Choose the days and hours you take calls. You can change these any time without touching the website.</li>
+      <li><strong>Create the event.</strong>Click <strong>Create → Event type → One-on-one</strong>. Name it <em>Free consultation</em> and pick a length (20 or 30 minutes works well). For <em>Location</em>, choose phone call (Calendly asks for the client's number), Zoom, or Google Meet.</li>
+      <li><strong>Ask a question or two (optional).</strong>Under the event's booking questions, add something like "What would you like help with?" so you know before the call.</li>
+      <li><strong>Copy the link.</strong>On the event, click <strong>Copy link</strong> (or <em>Share</em>). It looks like <code>https://calendly.com/desitrue/free-consultation</code>. Then follow the next step.</li>
+    </ol>
 
     <h3>Turn on Calendly booking</h3>
     <p class="prose">In <code>contact.html</code>, find the line that starts with <code>&lt;div class="calendly-inline-widget"</code> and paste your Calendly link between the two quote marks after <code>data-url=</code>. The calendar appears automatically and the "coming soon" box disappears.</p>
@@ -270,7 +279,7 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
       <div><div class="tag">After</div><pre><code>&lt;div class="calendly-inline-widget"
   data-url="https://calendly.com/desitrue/consultation" hidden&gt;&lt;/div&gt;</code></pre></div>
     </div>
-    <p class="prose">Leave the word <code>hidden</code> in place; the page removes it itself once a link is there. Your Calendly link is under <em>Share</em> on any event type in Calendly.</p>
+    <p class="prose">Leave the word <code>hidden</code> in place; the page removes it itself once a link is there. Or simply ask Claude: <span class="ask" style="display:inline-block;margin:6px 0 0">Turn on Calendly booking with this link: https://calendly.com/…</span></p>
 
     <h3>Add a service</h3>
     <p class="prose">Each service card on the home page has a list of ticked items. Copy one whole <code>&lt;li&gt;…&lt;/li&gt;</code> line, paste it on a new line of its own lined up with the others, and change the words.</p>
