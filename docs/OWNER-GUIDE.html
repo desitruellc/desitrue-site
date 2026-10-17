@@ -225,8 +225,9 @@
       <div role="listitem"><code>css/site.css</code><span>The look of every page. The <strong>top section</strong> (<code>:root</code>) holds the brand colours, fonts and spacing.</span></div>
       <div role="listitem"><code>assets/img/</code><span>Photos. Each one has a fixed name the pages expect (<code>hero.jpg</code>, <code>about-portrait.jpg</code>, <code>svc-financial.jpg</code>, <code>svc-admin.jpg</code>, <code>svc-creative.jpg</code>, <code>og-image.jpg</code>).</span></div>
       <div role="listitem"><code>assets/favicon.svg</code><span>The little "D" icon in the browser tab.</span></div>
-      <div role="listitem"><code>ASSETS.html</code><span>Ready-made prompts for photos and the logo, each tied to its file name. Open it on the live site at <code>…/desitrue-site/ASSETS.html</code> (on github.com it shows as code).</span></div>
+      <div role="listitem"><code>ASSETS.html</code><span>Ready-made prompts for the logo and a design mockup. Open it on the live site at <code>…/desitrue-site/ASSETS.html</code> (on github.com it shows as code).</span></div>
       <div role="listitem"><code>CLAUDE.md</code><span>Notes Claude Code reads automatically, so it knows the site's rules before you ask anything.</span></div>
+      <div role="listitem"><code>docs/PHOTO-PROMPTS.md</code><span>Prompts for the remaining photos, with the file name and shape for each.</span></div>
       <div role="listitem"><code>docs/OWNER-GUIDE.html</code><span>This guide.</span></div>
     </div>
     <div class="callout callout--tip"><p><strong>Brand colours at a glance.</strong> Cream <code>#FFFAF7</code> background · blush <code>#F6E6E2</code> sections · deep rose <code>#8A4A56</code> buttons and links · rose gold <code>#B76E79</code> for thin lines and icons only (it's too pale for text) · plum-charcoal <code>#2E2328</code> text. Headings use <em>Cormorant Garamond</em>, body text uses <em>DM Sans</em>.</p></div>
@@ -259,7 +260,7 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
     <div class="ask">Replace every [email] on the site with hello@desitrue.com and every [phone] with (555) 555-0123. Use +15555550123 inside the tel: links.</div>
 
     <h3>Swap in a photo</h3>
-    <p class="prose">No code to change. Make the image (prompts are in <code>ASSETS.html</code>), crop and resize it to the size listed there, name it exactly as listed, and put it in <code>assets/img/</code>, replacing any file with the same name. Until a photo exists, the large arched frames show a soft rose-gold shape on wide screens, and everything else (the service card photos, and the arches on phones) is simply hidden. If you use the stand-in About photo from <code>ASSETS.html</code> instead of a real headshot, also ask Claude to change that image's description (its <code>alt</code> text), which currently says it is a portrait of Desirée.</p>
+    <p class="prose">No code to change. Make the image (prompts and sizes are in <code>docs/PHOTO-PROMPTS.md</code>, which reads best on github.com), crop and resize it to the size listed there, name it exactly as listed, and put it in <code>assets/img/</code>, replacing any file with the same name. Until a photo exists, the large arched frames show a soft rose-gold shape on wide screens, and everything else (the service card photos, and the arches on phones) is simply hidden. When you replace a photo with a different scene, also ask Claude to update that image's description (its <code>alt</code> text) to match.</p>
     <div class="ask">Here is my new headshot (attach the file). Crop it to 4:5, resize it to 1000×1250, save it as assets/img/about-portrait.jpg, and show me the About page.</div>
 
     <h3>Turn on Calendly booking</h3>
@@ -497,7 +498,7 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
       <li><strong>Her story</strong>: two bracketed sentences on the About page (background, and why she started DesiTrue).</li>
       <li><strong>Check the name story</strong>: the About page says "Desi from Desirée, True from Truesdale". Confirm that's right, or reword it.</li>
       <li><strong>Calendly link</strong>: section 3.</li>
-      <li><strong>Photos</strong>: a real headshot for <code>about-portrait.jpg</code>, plus the photos in <code>ASSETS.html</code>.</li>
+      <li><strong>Photos</strong>: a real headshot for <code>about-portrait.jpg</code>, plus the photos in <code>docs/PHOTO-PROMPTS.md</code>.</li>
       <li><strong>Logo</strong>: optional; the "D" badge works until there is one.</li>
       <li><strong>Credentials</strong>: if you'd like to show credentials (for example EA, CPA or other certifications), add them to the About page. They build trust.</li>
       <li><strong>Read every line once</strong>: the copy is a first draft written for her. Change anything that doesn't sound like her.</li>
