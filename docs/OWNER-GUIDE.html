@@ -321,7 +321,7 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
       <li><strong>Install Git for Windows.</strong>Download it from <a href="https://git-scm.com/download/win">git-scm.com/download/win</a> and click through the installer with the default choices. Git is the tool that saves versions and uploads them to GitHub. You won't need to learn it, because Claude runs it for you. It also handles your GitHub sign-in: the first time something is uploaded, a browser window asks you to log in to GitHub.</li>
       <li><strong>Open the Code tab.</strong>In the Claude app, click <strong>Code</strong> at the top. Choose <strong>Local</strong>, click <strong>Select folder</strong>, and pick (or create) a folder such as <code>Documents\Websites</code>. If the Code tab asks you to upgrade, your plan doesn't include Claude Code.</li>
       <li><strong>Download the site.</strong>Ask Claude:
-        <div class="ask">Clone https://github.com/&lt;your-username&gt;/desitrue-site into this folder.</div>
+        <div class="ask">Clone https://github.com/DesiTrueLLC/desitrue-site into this folder.</div>
         Then start a new session with <strong>Select folder</strong> pointing at the new <code>desitrue-site</code> folder. From then on, always open that folder.</li>
       <li><strong>Pick the safe mode.</strong>Choose the <strong>Manual</strong> (ask before each change) permission mode. Claude then shows each change as a before-and-after and waits for you to click <em>Accept</em>.</li>
     </ol>
@@ -363,7 +363,7 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
       <li><strong>Start fresh.</strong> Begin each session with "pull the latest changes from GitHub", so you're never working on an old copy.</li>
       <li><strong>Preview before publishing.</strong> End requests with "show me before you push".</li>
       <li><strong>One change at a time.</strong> Small changes are easy to check and easy to undo.</li>
-      <li><strong>The website is public.</strong> The repository is private, but every file in it can end up on the public site, so never ask Claude to put passwords, client details or private documents in this folder.</li>
+      <li><strong>Everything here is public.</strong> The repository and the website can both be seen by anyone (that's what keeps hosting free), so never ask Claude to put passwords, client details or private documents in this folder.</li>
       <li><strong>Leave the domain settings alone.</strong> Don't ask Claude to change the <code>CNAME</code> file or anything in GoDaddy. Those are set once on domain move day (section 7).</li>
     </ul>
   </section>
@@ -373,29 +373,27 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
     <span class="num">06</span>
     <h2>Taking ownership of the site</h2>
     <div class="prose">
-      <p>The site starts out in Rick's GitHub account as a private repository called <code>ricksinclair/desitrue-site</code>. Your account (<code>DesiTrueLLC</code>) has been invited as a collaborator: accept the email invite and you can edit and publish right away. Collaborators can't change the repository's settings, though, so for full control Rick transfers it to you. Moving it takes about five minutes. Do it <strong>before</strong> domain move day, so the domain is pointed at your account once and never needs changing again. The full history comes along, and GitHub forwards links to the old repository. The old <em>website</em> address is not forwarded: until the transfer the preview lives at <code>ulrictodman.com/desitrue-site/</code> (Rick's account), and afterwards at <code>&lt;your-username&gt;.github.io/desitrue-site/</code>. Don't share either address publicly; share desitrue.com once it's live.</p>
+      <p>Rick built the site in his GitHub account and has sent it to yours (<code>DesiTrueLLC</code>). Once you accept, it lives at <code>github.com/DesiTrueLLC/desitrue-site</code> and the preview site at <code>desitruellc.github.io/desitrue-site/</code>. You own it outright: the full history comes along, and you control every setting. Links to the old repository forward automatically; the old preview address does not. Don't share the preview address publicly; share desitrue.com once it's live.</p>
     </div>
     <div class="cards">
       <div class="card">
         <h4>Desirée</h4>
         <ol class="steps" style="margin:0">
-          <li>Create a free account at <a href="https://github.com/signup">github.com/signup</a> and send Rick your username.</li>
-          <li>Open the email from GitHub and click <strong>Accept transfer</strong>. The link expires after a day; if it does, Rick sends it again.</li>
-          <li>In the repository: <strong>Settings → Pages</strong>. Under <em>Build and deployment</em>, set Source to <em>Deploy from a branch</em>, branch <code>main</code>, folder <code>/ (root)</code>, and click Save.</li>
-          <li>About a minute later, the site is at <code>https://&lt;your-username&gt;.github.io/desitrue-site/</code>.</li>
+          <li>Open the email from GitHub about <code>desitrue-site</code> and click to accept the transfer. The link expires after a day; if it does, Rick sends it again.</li>
+          <li>In the repository, open <strong>Settings → Pages</strong>. Check that <em>Source</em> says <em>Deploy from a branch</em>, branch <code>main</code>, folder <code>/ (root)</code>. If not, set it and click Save.</li>
+          <li>About a minute later, the site is at <code>https://desitruellc.github.io/desitrue-site/</code>.</li>
+          <li>Optional: add Rick back under <strong>Settings → Collaborators</strong> if you'd like his help later.</li>
         </ol>
       </div>
       <div class="card">
-        <h4>Rick</h4>
+        <h4>Rick (done October 2026)</h4>
         <ol class="steps" style="margin:0">
-          <li>In the repository: <strong>Settings → General</strong>, scroll to <em>Danger Zone</em>, click <strong>Transfer</strong>.</li>
-          <li>Choose <em>Specify an organization or username</em>, enter Desirée's username, type the repository name to confirm, and click <strong>I understand, transfer this repository</strong>.</li>
-          <li>Optional: ask to be added as a collaborator (<strong>Settings → Collaborators</strong>) to keep helping.</li>
+          <li>Made the repository public, so the site stays free to host on any account.</li>
+          <li><strong>Settings → General → Danger Zone → Transfer</strong>, to <code>DesiTrueLLC</code>.</li>
         </ol>
       </div>
     </div>
-    <div class="callout callout--warn"><p><strong>Private repository, free account.</strong> GitHub only publishes a site from a <em>private</em> repository on a paid plan. Rick's account has one, so the site works today. After the transfer, a free account has two options: make the repository public (<strong>Settings → General → Danger Zone → Change visibility</strong>; the site is public anyway), or upgrade to GitHub Pro. Without one of these, the site goes offline after the transfer.</p></div>
-  </section>
+      </section>
 
   <!-- 7 -->
   <section class="chapter" id="domain">
@@ -453,7 +451,7 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
           <tr class="add"><td><span class="pill pill--add">Add</span></td><td>A</td><td><code>@</code></td><td><code>185.199.109.153</code></td></tr>
           <tr class="add"><td><span class="pill pill--add">Add</span></td><td>A</td><td><code>@</code></td><td><code>185.199.110.153</code></td></tr>
           <tr class="add"><td><span class="pill pill--add">Add</span></td><td>A</td><td><code>@</code></td><td><code>185.199.111.153</code></td></tr>
-          <tr class="add"><td><span class="pill pill--add">Add</span></td><td>CNAME</td><td><code>www</code></td><td><code>&lt;your-username&gt;.github.io</code></td><td>Makes www.desitrue.com work too</td></tr>
+          <tr class="add"><td><span class="pill pill--add">Add</span></td><td>CNAME</td><td><code>www</code></td><td><code>desitruellc.github.io</code></td><td>Makes www.desitrue.com work too</td></tr>
           <tr class="add"><td><span class="pill pill--add">Add</span></td><td>TXT</td><td><code>_github-pages-challenge-…</code></td><td>(the value GitHub gives you)</td><td>Step 1 domain verification</td></tr>
           <tr><td><span class="pill pill--remove">Remove</span></td><td>A / CNAME</td><td><code>@</code>, <code>www</code></td><td>anything else, e.g. <code>ghs.googlehosted.com</code> or GoDaddy "Parked"</td><td>Old website or parking-page records</td></tr>
           <tr class="keep"><td><span class="pill pill--keep">Keep</span></td><td>MX</td><td><code>@</code></td><td>whatever is there now</td><td>Delivers your email</td></tr>

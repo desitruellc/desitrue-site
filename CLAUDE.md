@@ -9,7 +9,7 @@ Gotchas the files won't tell you:
 - Photos are fixed filenames in `assets/img/` (see `ASSETS.html`); a missing photo hides itself, so don't add placeholder images.
 - `404.html` uses root-absolute links because GitHub serves it at any path; keep them that way.
 - Pull before starting and before pushing: GitHub commits `CNAME` to `main` itself on domain day. Never force-push.
-- The repo is private but the site is public, and any committed file can be served. Never commit client data, credentials or private documents.
+- The repo and the site are both public. Never commit client data, credentials or private documents.
 - Don't create or edit `CNAME`, and don't suggest DNS changes; the domain cutover is a one-time step in `docs/OWNER-GUIDE.html` §7. Email DNS records (MX, SPF, DKIM) must never be touched.
 - Square-bracket text like `[email]` is an unfilled placeholder, not literal copy.
 
