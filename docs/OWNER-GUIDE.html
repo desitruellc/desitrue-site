@@ -249,7 +249,7 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
     <div class="ask">On the home page, change the line under the buttons to "Serving clients across your area since 2020."</div>
 
     <h3>Fill in your email and phone everywhere</h3>
-    <p class="prose">The placeholders <code>[email]</code> and <code>[phone]</code> appear in the footer of all four pages (<code>index.html</code>, <code>about.html</code>, <code>contact.html</code>, <code>404.html</code>) and in the Contact page's details box and booking box. Each one appears twice per spot: once inside the link and once as the text people see. This change is quickest with Claude; on github.com, edit each of the four files in turn. Phone links need the number written without spaces, with the country code: <code>tel:+15555550123</code>.</p>
+    <p class="prose">The placeholders <code>[email]</code> and <code>[phone]</code> appear in the footer of all four pages (<code>index.html</code>, <code>about.html</code>, <code>contact.html</code>, <code>404.html</code>) and in the Contact page's details box. Each of those spots has it twice: once inside the link and once as the text people see. The Contact page's "Email to book" button also has <code>[email]</code> inside its link. This change is quickest with Claude; on github.com, edit each of the four files in turn. Phone links need the number written without spaces, with the country code: <code>tel:+15555550123</code>.</p>
     <div class="ba">
       <div><div class="tag">Before</div><pre><code>&lt;a href="mailto:[email]"&gt;[email]&lt;/a&gt;
 &lt;a href="tel:[phone]"&gt;[phone]&lt;/a&gt;</code></pre></div>
@@ -439,7 +439,7 @@ busy professionals and families.&lt;/p&gt;</code></pre></div>
       <li><strong>Prove the domain is yours to GitHub.</strong>On github.com: your profile picture → <strong>Settings → Pages</strong> → <strong>Add a domain</strong> → enter <code>desitrue.com</code>. GitHub shows a TXT record. Add it in GoDaddy's DNS page (<em>Domain Portfolio → desitrue.com → DNS</em>; the menu names change now and then), wait a few minutes, then click <strong>Verify</strong>. This stops anyone else's GitHub site from claiming your domain.</li>
       <li><strong>Tell GitHub the domain.</strong>Repository → <strong>Settings → Pages</strong> → <em>Custom domain</em>: type <code>desitrue.com</code> and Save. GitHub adds a file called <code>CNAME</code> to the site for you. Go straight on to the next step.</li>
       <li><strong>Point the domain at GitHub.</strong>In GoDaddy's DNS page, make the records match the table below. GitHub's DNS check then passes on its own, which can take from a few minutes to a few hours.</li>
-      <li><strong>Turn on the padlock.</strong>When the check passes, tick <strong>Enforce HTTPS</strong> on the same page. The certificate can take up to an hour to appear.</li>
+      <li><strong>Turn on the padlock.</strong>When the check passes, go back to the repository's <strong>Settings → Pages</strong> and tick <strong>Enforce HTTPS</strong>. The certificate can take up to an hour to appear.</li>
       <li><strong>Finish with Claude.</strong>
         <div class="ask">Pull the latest changes from GitHub first. The site is now live at desitrue.com. Update the og:image tags on every page to the full address https://desitrue.com/assets/img/og-image.jpg, then commit and push.</div></li>
     </ol>
