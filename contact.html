@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact DesiTrue | Book a Free Consultation</title>
+  <meta name="description" content="Book a free consultation with DesiTrue, or get in touch by email or phone.">
+  <meta property="og:title" content="Contact DesiTrue | Book a Free Consultation">
+  <meta property="og:description" content="Bookkeeping, tax preparation, administrative support and creative marketing, handled with care.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/og-image.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="DesiTrue home"><span class="brand-mark" aria-hidden="true">D</span>DesiTrue</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a class="btn btn--primary" href="contact.html#book">Book a call</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Contact</p>
+        <h1>Let's talk</h1>
+        <p class="lead">Book a free consultation at a time that suits you, or reach out directly. We reply within one business day.</p>
+      </div>
+    </section>
+
+    <section class="section section--blush" aria-labelledby="book-title">
+      <div class="container contact-grid">
+        <div class="panel" id="book">
+          <h2 id="book-title">Book a free consultation</h2>
+          <!-- To turn on booking: paste her Calendly link between the quotes in data-url below,
+               e.g. data-url="https://calendly.com/desitrue/consultation". Nothing else needs changing. -->
+          <div class="calendly-inline-widget" data-url="" hidden></div>
+          <div class="booking-placeholder" data-booking-placeholder>
+            <h3>Online booking is coming soon</h3>
+            <p>In the meantime, send a quick email or call, and we'll find a time together.</p>
+            <a class="btn btn--primary" href="mailto:[email]?subject=Free%20consultation">Email to book</a>
+          </div>
+        </div>
+
+        <aside class="panel" aria-labelledby="details-title">
+          <h2 id="details-title" style="font-size: 1.75rem">Contact details</h2>
+          <ul class="details">
+            <li><span class="label">Email</span><a href="mailto:[email]">[email]</a></li>
+            <li><span class="label">Phone</span><a href="tel:[phone]">[phone]</a></li>
+            <li><span class="label">Hours</span><span class="value-text">[hours, e.g. Monday to Friday, 9am to 5pm]</span></li>
+            <li><span class="label">Based in</span><span class="value-text">[City]. Working with clients remotely.</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Questions</p>
+          <h2 id="faq-title">Before you book</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Is the first call really free?</summary>
+            <p>Yes. It's a short conversation to understand what you need and whether we're a good fit. No obligation.</p>
+          </details>
+          <details>
+            <summary>Do you work remotely?</summary>
+            <p>Yes. Most work happens online, with calls and secure file sharing, so where you live doesn't matter.</p>
+          </details>
+          <details>
+            <summary>How is pricing set?</summary>
+            <p>After the first call you get a plain-language quote, either a monthly package or a fixed price for a project. You'll know the cost before any work starts.</p>
+          </details>
+          <details>
+            <summary>What should I have ready?</summary>
+            <p>Nothing formal. A rough idea of what's taking your time is plenty. For bookkeeping or tax work, recent statements help, and we'll tell you exactly what we need.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Shows the Calendly calendar once a link is pasted into data-url above.
+    (function () {
+      var widget = document.querySelector(".calendly-inline-widget");
+      if (!widget || !widget.dataset.url) return;
+      widget.hidden = false;
+      document.querySelector("[data-booking-placeholder]").hidden = true;
+      var s = document.createElement("script");
+      s.src = "https://assets.calendly.com/assets/external/widget.js";
+      s.async = true;
+      document.body.appendChild(s);
+    })();
+  </script>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">D</span>DesiTrue</a>
+          <p>Bookkeeping, administrative and creative support, handled with care.</p>
+        </div>
+        <div>
+          <p class="footer-title">Pages</p>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Get in touch</p>
+          <ul class="footer-links">
+            <li><a href="mailto:[email]">[email]</a></li>
+            <li><a href="tel:[phone]">[phone]</a></li>
+            <li><a href="contact.html#book">Book a call</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <p>DesiTrue provides bookkeeping, tax preparation, administrative and creative services. Information on this site is general and is not legal, tax or investment advice for your situation.</p>
+        <p>© <span data-year>2026</span> DesiTrue. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script>document.querySelectorAll("[data-year]").forEach(el => el.textContent = new Date().getFullYear());</script>
+</body>
+</html>
