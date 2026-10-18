@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /docs/
+Disallow: /ASSETS.html
+
+Sitemap: https://desitrue.com/sitemap.xml

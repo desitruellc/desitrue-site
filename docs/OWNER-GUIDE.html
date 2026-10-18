@@ -449,8 +449,11 @@ professional firms and mission-driven organizations.&lt;/p&gt;</code></pre></div
       <li><strong>Tell GitHub the domain.</strong>Repository → <strong>Settings → Pages</strong> → <em>Custom domain</em>: type <code>desitrue.com</code> and Save. GitHub adds a file called <code>CNAME</code> to the site for you. Go straight on to the next step.</li>
       <li><strong>Point the domain at GitHub.</strong>In GoDaddy's DNS page, make the records match the table below. GitHub's DNS check then passes on its own, which can take from a few minutes to a few hours.</li>
       <li><strong>Turn on the padlock.</strong>When the check passes, go back to the repository's <strong>Settings → Pages</strong> and tick <strong>Enforce HTTPS</strong>. The certificate can take up to an hour to appear.</li>
-      <li><strong>Finish with Claude.</strong>
-        <div class="ask">Pull the latest changes from GitHub first. The site is now live at desitrue.com. Update the og:image tags on every page to the full address https://desitrue.com/assets/img/og-image.jpg, then commit and push.</div></li>
+      <li><strong>Tell Google about the site.</strong>The site's search tags already point at desitrue.com, so there's nothing to change in the files. Two free steps help people find it:
+        <ul>
+          <li><a href="https://search.google.com/search-console">Google Search Console</a>: add <code>desitrue.com</code> as a <em>Domain</em> property, verify it with the TXT record Google gives you (added in GoDaddy's DNS page, like step 1), then under <em>Sitemaps</em> submit <code>sitemap.xml</code>.</li>
+          <li><a href="https://business.google.com">Google Business Profile</a>: create a profile for DésiTrue Services LLC as a <em>service-area business</em> (you can hide your street address), with the website, phone, hours and a few photos. This is what puts a business on Google Maps and in local searches.</li>
+        </ul></li>
     </ol>
 
     <div class="table-wrap">
