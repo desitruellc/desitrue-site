@@ -125,6 +125,18 @@ a:hover { color: var(--rose-dark); }
   display: grid; place-items: center;
   color: var(--white); font-size: 1.05rem; font-weight: 700;
 }
+/* Foil glint: a soft highlight sweeps across the header badge every 7 seconds.
+   Off for visitors whose device asks for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .site-header .brand-mark { position: relative; overflow: hidden; }
+  .site-header .brand-mark::after {
+    content: ""; position: absolute; inset: -30%;
+    background: linear-gradient(115deg, transparent 38%, rgb(255 255 255 / 0.75) 50%, transparent 62%);
+    transform: translateX(-130%);
+    animation: brand-glint 7s ease-in-out 1.2s infinite;
+  }
+}
+@keyframes brand-glint { 0% { transform: translateX(-130%); } 16%, 100% { transform: translateX(130%); } }
 .brand-text { display: flex; flex-direction: column; }
 .brand-name { line-height: 1; }
 .brand-sub {
