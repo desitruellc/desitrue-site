@@ -1,6 +1,7 @@
 # GitHub Pages turns Markdown files into public pages. Keep the internal notes off the website;
 # they stay readable on github.com.
 exclude:
+  - AGENTS.md
   - CLAUDE.md
   - README.md
   - docs/PHOTO-PROMPTS.md
