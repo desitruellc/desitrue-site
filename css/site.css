@@ -287,3 +287,24 @@ a:hover { color: var(--rose-dark); }
 /* Until a photo is added: drop empty card photos, and keep empty arches only on wide screens */
 .photo--card.is-empty { display: none; }
 @media (max-width: 879px) { .photo--arch.is-empty, .photo--portrait.is-empty { display: none; } }
+
+/* Workshop calendar (Financial Wellness page). The "no workshops" note hides itself once the list has an event. */
+.events { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s5); }
+@media (min-width: 760px) { .events { grid-template-columns: repeat(2, 1fr); } }
+.events:has(li) + .events-empty { display: none; }
+.event { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); padding: var(--s5); border-top: 3px solid var(--rose-gold); }
+.event h3 { margin-bottom: var(--s2); }
+.event-date { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rose); margin-bottom: var(--s2); }
+.event-meta { color: var(--ink-soft); font-size: 0.95rem; }
+.events-empty { max-width: 40em; }
+.events-empty p { color: var(--ink-soft); }
+.events-empty p strong { color: var(--ink); }
+
+/* Phones: the menu sits on its own row under the logo so all four links fit */
+@media (max-width: 719px) {
+  html { scroll-padding-top: 116px; }
+  .site-header .container { flex-wrap: wrap; row-gap: 0; min-height: 0; padding-top: var(--s2); }
+  .site-nav { width: 100%; justify-content: space-between; margin: 0 calc(-1 * var(--s1)); }
+  .site-nav a { padding: var(--s2) var(--s1); white-space: nowrap; }
+}
+@media (min-width: 760px) { .values--pairs { grid-template-columns: repeat(2, 1fr); } }

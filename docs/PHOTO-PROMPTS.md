@@ -60,6 +60,16 @@ Using the attached photo as a reference for the same woman, create a professiona
 Wide, elegant brand banner photograph: a bright modern high-rise office with a cream wall, a dark walnut desk with a brass lamp and a small vase of blush roses on the right third of the frame, soft daylight from floor-to-ceiling windows with a softly blurred city skyline. Large calm empty area of cream wall on the left two-thirds, where a logo will be placed later. Rose-gold and brass accents. No people, no text, no logos, no certificates. Very wide landscape, 1200 by 630.
 ```
 
+## 6. Financial wellness
+
+- **File:** `financial-wellness` · **Shape:** portrait 4:5 · **Used on:** the Financial Wellness page's top photo
+
+**Attach the existing office photo as a reference** so Copilot keeps her likeness, and ask Désirée whether it looks like her before it goes on the site.
+
+```text
+Using the attached photo as a reference for the same woman, create a warm professional photograph of her sitting at a round light-wood table in a bright, welcoming room, smiling as she talks a client through a financial plan on a printed worksheet and a tablet. The client is seen from behind or in soft focus, faces turned away. Mugs of tea, a notebook, a rose-gold pen, a small vase of blush roses. Soft daylight from tall windows, cream and rose-gold tones. Friendly, unhurried, encouraging. No readable text, no logos, no certificates. Portrait 4:5.
+```
+
 ---
 
 ## Optional extras
